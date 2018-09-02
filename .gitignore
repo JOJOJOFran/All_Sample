@@ -2,3 +2,9 @@
 Asp\.net core sample/Middleware/bin/
 
 Asp\.net core sample/Middleware/obj/
+
+clr sample/async threading/\.vs/
+
+clr sample/async threading/Interlocked/bin/
+
+clr sample/async threading/Interlocked/obj/
