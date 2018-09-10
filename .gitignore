@@ -8,3 +8,9 @@ clr sample/async threading/\.vs/
 clr sample/async threading/Interlocked/bin/
 
 clr sample/async threading/Interlocked/obj/
+
+asp\.net core sample/Redis/\.vs/
+
+asp\.net core sample/Redis/RedisConsole/bin/
+
+asp\.net core sample/Redis/RedisConsole/obj/
