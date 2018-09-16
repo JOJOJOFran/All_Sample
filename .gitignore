@@ -26,3 +26,11 @@ asp\.net core sample/Configuration/\.vs/
 asp\.net core sample/Configuration/ConfigurationBuilder/bin/
 
 asp\.net core sample/Configuration/ConfigurationBuilder/obj/
+
+asp\.net core sample/Redis/RedisConsol_2/bin/
+
+asp\.net core sample/Redis/RedisConsol_2/obj/
+
+asp\.net core sample/加密/\.vs/
+
+asp\.net core sample/加密/加密/obj/
