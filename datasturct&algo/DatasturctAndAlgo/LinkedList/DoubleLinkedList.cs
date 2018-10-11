@@ -8,7 +8,7 @@ namespace DatasturctAndAlgo.LinkedList
     /// 简单实现双链表
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    class DoubleLinkedList<T>
+    public class DoubleLinkedList<T>:LinkedList<T>
     {
         private DoubleNode<T> _head;
         public DoubleNode<T> Head
@@ -55,13 +55,13 @@ namespace DatasturctAndAlgo.LinkedList
             while (tempNode != null&& tempNode.Next!= node)
             {
                 tempNode = tempNode.Next;
-                if (tempNode == null )
-                {
-                    ThrowLinkedListException("找不到对应的前置节点");
-                    return;
-                }
+                
             }
-
+            if (tempNode == null)
+            {
+                ThrowLinkedListException("找不到对应的前置节点");
+                return;
+            }
             newNode.Next= tempNode.Next;
             newNode.Prev = tempNode;
             tempNode.Next = newNode;
@@ -180,11 +180,13 @@ namespace DatasturctAndAlgo.LinkedList
             while (tempNode != null && tempNode.Next != node)
             {
                 tempNode = tempNode.Next;
-                if (tempNode == null || tempNode.Next == null)
-                {
-                    ThrowLinkedListException("找不到对应的前置节点");
-                    return;
-                }
+                
+            }
+
+            if (tempNode == null)
+            {
+                ThrowLinkedListException("找不到对应的前置节点");
+                return;
             }
             tempNode.Next = node.Next;
         }

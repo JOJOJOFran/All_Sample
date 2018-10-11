@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DatasturctAndAlgo.LinkedList
 {
-    public class SingleLinkedList<T>
+    public class SingleLinkedList<T>: LinkedList<T>
     {
         private Node<T> _head;
         //private const int MaxSize = 10000;
@@ -120,15 +120,14 @@ namespace DatasturctAndAlgo.LinkedList
             }
 
             var tempNode = _head;
-            while (tempNode != null&&tempNode.Next!= node && tempNode.Next!=null)
+            while (tempNode != null&&tempNode.Next!= node)
             {
                 tempNode = tempNode.Next;
-                if (tempNode == null || tempNode.Next==null)
-                {
-                    ThrowLinkedListException("找不到对应的前置节点");
-                    return;
-                }
-
+            }
+            if (tempNode == null)
+            {
+                ThrowLinkedListException("找不到对应的前置节点");
+                return;
             }
             tempNode.Next = newNode;
             newNode.Next = node;
@@ -150,12 +149,14 @@ namespace DatasturctAndAlgo.LinkedList
             while (tempNode != null && tempNode.Next != node)
             {
                 tempNode = tempNode.Next;
-                if (tempNode == null || tempNode.Next == null)
-                {
-                    ThrowLinkedListException("找不到对应的前置节点");
-                    return;
-                }
+               
             }
+            if (tempNode == null)
+            {
+                ThrowLinkedListException("找不到对应的前置节点");
+                return;
+            }
+
             tempNode.Next = node.Next;
         }
 
@@ -174,7 +175,7 @@ namespace DatasturctAndAlgo.LinkedList
         public void ShowAll()
         {
             var tempNode = _head;
-            while (tempNode != null && tempNode.Next != null)
+            while (tempNode != null )
             {
                 Console.WriteLine(tempNode.Data);
                 tempNode = tempNode.Next;

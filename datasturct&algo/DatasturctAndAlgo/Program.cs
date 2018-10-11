@@ -9,7 +9,10 @@ namespace DatasturctAndAlgo
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            SingleLinkedListTest();
+            int[] a = new int[10];
+            Console.WriteLine(a.Length);
+
+            //SingleLinkedListTest();
             Console.ReadKey();
         }
 
