@@ -14,29 +14,20 @@ namespace DatasturctAndAlgo.Algo.链表问题
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
-        public SingleLinkedList<int> SingleListReverse(SingleLinkedList<int> list)
+        public Node<int> SingleListReverse(Node<int> head)
         {
             Node<int> prevNode = null;
             Node<int> nextNode = null;
-            Node<int> currentNode = list.Head;
-            while (currentNode!=null)
+            while (head != null)
             {
-                //反转后面节点的指针
-                nextNode=currentNode.Next;
-                nextNode.Next = currentNode;
-                //反转当前节点的指针
-                currentNode.Next = prevNode;
-                //前节点移动一位，以达到遍历的目的
-                prevNode = currentNode;
-                //将当前节点移动到下一个节点，以达到遍历的目的
-                currentNode = nextNode;
- 
+                nextNode = head.Next;
+                head.Next = prevNode;
+                prevNode = head;
+                head = nextNode;
             }
-            //currentNode移动到了,最后节点.Next，所以prevNode是最后一个节点
-            list.Head = prevNode;
-            return list;
-        }
 
+            return prevNode;
+        }
 
         /// <summary>
         /// Q:双链表反转
@@ -165,6 +156,41 @@ namespace DatasturctAndAlgo.Algo.链表问题
             }
 
             return slowHead;
+        }
+
+        /// <summary>
+        /// Q:链表中的回文判断
+        /// T:可以反转链表，然后比对两个链表是不是相等(不可行，如果要实现需要，因为引用的关系需要把链表全部复制一遍再进行反转)
+        ///   也可以，将链表找到中间节点，然后针对中间节点进行反转，将反转后的半节链表进行比对
+        ///   用栈存储一个，再遍历对比
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public bool PalindromeValidateByLinkedList(SingleLinkedList<int> list)
+        {
+            if (list.Head == null)
+            {
+                return true;
+            }
+            Stack<Node<int>> stack = new Stack<Node<int>>();
+            var head = list.Head;
+            while (head != null)
+            {
+                stack.Push(head);
+                head = head.Next;
+            }
+
+            while (list.Head != null)
+            {
+                if (list.Head.Data!= stack.Pop().Data)
+                {
+                    return false;
+                }
+                list.Head = list.Head.Next;
+            }
+
+            return true;
+            
         }
     }
 }

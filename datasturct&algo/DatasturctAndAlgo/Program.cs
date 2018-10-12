@@ -1,4 +1,5 @@
-﻿using DatasturctAndAlgo.LinkedList;
+﻿using DatasturctAndAlgo.Algo.链表问题;
+using DatasturctAndAlgo.LinkedList;
 using System;
 using System.Collections.Generic;
 
@@ -9,10 +10,10 @@ namespace DatasturctAndAlgo
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            int[] a = new int[10];
-            Console.WriteLine(a.Length);
+
 
             //SingleLinkedListTest();
+            LinkedListAlgoTest();
             Console.ReadKey();
         }
 
@@ -42,6 +43,28 @@ namespace DatasturctAndAlgo
 
         }
         #endregion
+
+        # region 链表算法测试
+        static void LinkedListAlgoTest()
+        {
+            SingleLinkedList<int> strList = new SingleLinkedList<int>();
+            strList.InsertHead(1);
+            strList.InsertAfter(strList.Head, 2);
+            strList.InsertAfter(strList.Head.Next, 2);
+            strList.InsertAfter(strList.Head.Next.Next, 1);
+  
+
+            LinkedListAlgo algo = new LinkedListAlgo();
+            if (algo.PalindromeValidateByLinkedList(strList))
+            {
+                Console.WriteLine("是回文链表");
+            }
+            else
+            {
+                Console.WriteLine("不是回文链表");
+            }
+        }
+        #endregion 
 
 
 
