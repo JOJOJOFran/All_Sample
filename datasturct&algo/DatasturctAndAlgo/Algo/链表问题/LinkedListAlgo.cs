@@ -192,5 +192,59 @@ namespace DatasturctAndAlgo.Algo.链表问题
             return true;
             
         }
+
+        public int[] TwoSum(int[] nums, int target)
+        {
+            Dictionary<int, int> dic = new Dictionary<int, int>();
+ 
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int result = target - nums[i];
+                if (dic.ContainsKey(result))
+                {
+                    return new int[] { result, dic[result] }; 
+                }
+                dic.Add(nums[i], i);
+            }
+            return null;
+        }
+
+        public Node<int> AddTowList(Node<int> head1, Node<int> head2)
+        {
+            int count = 0;
+            int tmp1 = 0;
+            int tmp2 = 0;
+            while (head1 != null && head2 != null)
+            {
+
+                tmp1 = tmp1 + head1.Data * Convert.ToInt32(Math.Pow(10, count));
+                tmp2 = tmp2 + head2.Data * Convert.ToInt32(Math.Pow(10, count));
+                head1 = head1.Next;
+                head2 = head2.Next;
+                count++;
+            }
+
+            var result = (tmp1 + tmp2).ToString().ToCharArray();
+            var newHead = new Node<int>(0,null);
+            var tmpHead = newHead;
+            for (int i = result.Length-1; i >= 0; i--)
+            {
+                tmpHead.Data = Convert.ToInt32(result[i].ToString());              
+                if (i != 0)
+                {
+
+                    tmpHead.Next = new Node<int>(0, null); ;
+                    tmpHead = tmpHead.Next;
+                }
+                else
+                {
+                    tmpHead.Next = null;
+                }
+            }
+
+            return newHead;
+
+
+        }
     }
 }

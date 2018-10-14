@@ -1,4 +1,5 @@
-﻿using DatasturctAndAlgo.Algo.链表问题;
+﻿using DatasturctAndAlgo.Algo.LeetCode;
+using DatasturctAndAlgo.Algo.链表问题;
 using DatasturctAndAlgo.LinkedList;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,12 @@ namespace DatasturctAndAlgo
         {
             Console.WriteLine("Hello World!");
 
+            //LeetCode.LengthOfLongestSubstring("aabc");
+            //Console.WriteLine(LeetCode.LengthOfLongestSubstring("aabc"));
+            //Console.WriteLine(LeetCode.LengthOfLongestSubstring("qqqq"));
+            Console.WriteLine(LeetCode.LengthOfLongestSubstring("qqwwqer"));
 
-            //SingleLinkedListTest();
-            LinkedListAlgoTest();
+            //return head1;
             Console.ReadKey();
         }
 
@@ -63,6 +67,21 @@ namespace DatasturctAndAlgo
             {
                 Console.WriteLine("不是回文链表");
             }
+        }
+
+        static void test()
+        {
+            SingleLinkedList<int> strList = new SingleLinkedList<int>();
+            strList.InsertHead(9);
+            strList.InsertAfter(strList.Head, 9);
+            strList.InsertAfter(strList.Head.Next, 9);
+
+            SingleLinkedList<int> strList1 = new SingleLinkedList<int>();
+            strList1.InsertHead(9);
+            strList1.InsertAfter(strList1.Head, 9);
+            strList1.InsertAfter(strList1.Head.Next, 9);
+            LinkedListAlgo algo = new LinkedListAlgo();
+            algo.AddTowList(strList.Head, strList1.Head);
         }
         #endregion 
 
