@@ -23,8 +23,10 @@ namespace ConsoleApp1
             //set并不生效
             Console.WriteLine("输出属性getsetDefault的值：{0}", 新属性.getsetDefault);
             新属性.二号属性.输出我的名字();
+            新属性.二号属性.输出我的名字();
+            新属性.索引测试(1);
 
-
+            test.Rest.GetRemark();
             Console.ReadKey();
 
            

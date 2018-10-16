@@ -15,8 +15,20 @@ namespace DatasturctAndAlgo
             //LeetCode.LengthOfLongestSubstring("aabc");
             //Console.WriteLine(LeetCode.LengthOfLongestSubstring("aabc"));
             //Console.WriteLine(LeetCode.LengthOfLongestSubstring("qqqq"));
-            Console.WriteLine(LeetCode.LengthOfLongestSubstring("qqwwqer"));
-
+            //Console.WriteLine(LeetCode.LengthOfLongestSubstring("qqwwqer"));
+           // SortedDictionary<>
+            SortedSet<int> set = new SortedSet<int>();
+            SortedList<int, int> list = new SortedList<int, int>();
+            int[] arry = new int[] { 1, 0, 9, 9, 7, 8, 53, 4, 46, 4, 4, 4, 7, 8, 9, 65, 3, 2 };
+            for (int i = 0; i < arry.Length; i++)
+            {
+                list.Add((arry[i]),i );
+                set.Add(arry[i]);
+            }
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
             //return head1;
             Console.ReadKey();
         }

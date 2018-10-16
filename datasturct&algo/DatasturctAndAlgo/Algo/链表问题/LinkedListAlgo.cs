@@ -193,22 +193,13 @@ namespace DatasturctAndAlgo.Algo.链表问题
             
         }
 
-        public int[] TwoSum(int[] nums, int target)
-        {
-            Dictionary<int, int> dic = new Dictionary<int, int>();
- 
-            for (int i = 0; i < nums.Length; i++)
-            {
-                int result = target - nums[i];
-                if (dic.ContainsKey(result))
-                {
-                    return new int[] { result, dic[result] }; 
-                }
-                dic.Add(nums[i], i);
-            }
-            return null;
-        }
-
+   
+        /// <summary>
+        /// 会溢出
+        /// </summary>
+        /// <param name="head1"></param>
+        /// <param name="head2"></param>
+        /// <returns></returns>
         public Node<int> AddTowList(Node<int> head1, Node<int> head2)
         {
             int count = 0;
@@ -245,6 +236,59 @@ namespace DatasturctAndAlgo.Algo.链表问题
             return newHead;
 
 
+        }
+
+        /// <summary>
+        /// Q:将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
+        /// 输入：1->2->4, 1->3->4
+        /// 输出：1->1->2->3->4->4
+        /// T:重点：这是两个有序的，所以当一个值比另一个链表的值大的时候，我们只用关心当前比较小的这个链表，直到值反超，再换链表插入
+        ///   也就是说一次只需要插入一个节点，也只用位移一个链表
+        ///   然后就是边界情况的考虑，这个比较简单，就不细说
+        /// </summary>
+        /// <param name="l1"></param>
+        /// <param name="l2"></param>
+        /// <returns></returns>
+        public Node<int> MergeTwoList(Node<int> l1, Node<int> l2)
+        {
+            if (l1 == null && l2 == null)
+            {
+                return null;
+            }
+
+            Node<int> dummyNode = new Node<int>(0, null);
+            Node<int> tmpNode = dummyNode;
+            while (l1 != null || l2 != null)
+            {
+               
+                if (l1 != null && l2 == null)
+                {
+                    tmpNode.Next = l1;
+                    break;
+                }
+
+                if (l2 != null && l1 == null)
+                {
+                    tmpNode.Next = l2;
+                    break;
+                }
+
+                tmpNode.Next = new Node<int>(0, null);
+                if (l1.Data < l2.Data)
+                {
+                    tmpNode.Next.Data = l1.Data;
+                    l1 = l1.Next;
+                }
+                else
+                {
+                    tmpNode.Next.Data = l2.Data;
+                    l2 = l2.Next;
+                }
+                tmpNode = tmpNode.Next;
+
+            }
+
+            return dummyNode.Next;
         }
     }
 }

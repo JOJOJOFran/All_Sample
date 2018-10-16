@@ -7,7 +7,7 @@ namespace ConsoleApp1
     class 属性测试
     {
         public string getValue = "first";
-        public string setDefaultValue ;
+        public string setDefaultValue;
         public string getFromgetValue { get { return getValue; } }
 
         public string getOnly { get { return "Just Get"; } }
@@ -15,5 +15,11 @@ namespace ConsoleApp1
         public string getsetDefault { get { return setDefaultValue; } set { setDefaultValue = "DefaulValue"; } }
 
         public 属性测试的属性类 二号属性 { get { return new 属性测试的属性类("new 属性"); } }
+
+        public  void 索引测试(int num)
+        {
+            var test = new 属性测试的属性类("");
+            Console.WriteLine(test[num]);
+        }
     }
 }
