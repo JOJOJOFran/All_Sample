@@ -1,4 +1,5 @@
 ﻿using DatasturctAndAlgo.Algo.LeetCode;
+using DatasturctAndAlgo.Algo.Sort;
 using DatasturctAndAlgo.Algo.链表问题;
 using DatasturctAndAlgo.LinkedList;
 using System;
@@ -16,20 +17,31 @@ namespace DatasturctAndAlgo
             //Console.WriteLine(LeetCode.LengthOfLongestSubstring("aabc"));
             //Console.WriteLine(LeetCode.LengthOfLongestSubstring("qqqq"));
             //Console.WriteLine(LeetCode.LengthOfLongestSubstring("qqwwqer"));
-           // SortedDictionary<>
-            SortedSet<int> set = new SortedSet<int>();
-            SortedList<int, int> list = new SortedList<int, int>();
-            int[] arry = new int[] { 1, 0, 9, 9, 7, 8, 53, 4, 46, 4, 4, 4, 7, 8, 9, 65, 3, 2 };
-            for (int i = 0; i < arry.Length; i++)
-            {
-                list.Add((arry[i]),i );
-                set.Add(arry[i]);
-            }
-            foreach (var item in list)
-            {
-                Console.WriteLine(item);
-            }
+            // SortedDictionary<>
+
+            //SortedSet<int> set = new SortedSet<int>();
+            //SortedList<int, int> list = new SortedList<int, int>();
+            //int[] arry = new int[] { 1, 0, 9, 9, 7, 8, 53, 4, 46, 4, 4, 4, 7, 8, 9, 65, 3, 2 };
+            //for (int i = 0; i < arry.Length; i++)
+            //{
+            //    list.Add((arry[i]),i );
+            //    set.Add(arry[i]);
+            //}
+            //foreach (var item in list)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
             //return head1;
+            // SortTest();
+
+            List<int> a = null;
+
+            Console.WriteLine(a?.Count);
+            string b = "123";
+
+            Console.WriteLine(b ?? "111");
             Console.ReadKey();
         }
 
@@ -95,7 +107,33 @@ namespace DatasturctAndAlgo
             LinkedListAlgo algo = new LinkedListAlgo();
             algo.AddTowList(strList.Head, strList1.Head);
         }
-        #endregion 
+        #endregion
+
+        #region
+        public static int[] array = new int[] { 6, 4, 3, 1, 2, 7, 8, 10, 9, 0 };
+        public static int[] array1 = new int[] { 6, 4, 3, 1, 2, 7, 8, 10, 9, 0 };
+        public static void SortTest()
+        {
+            int[] newArray = new int[10];
+            array.CopyTo(newArray,0);
+
+            Console.WriteLine("===冒泡测试===");
+            Sort.BubbleSort(array);
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+
+            Sort.InsertSort(array1);
+            for (int i = 0; i < array1.Length; i++)
+            {
+                Console.WriteLine(array1[i]);
+            }
+
+
+
+        }
+        #endregion
 
 
 
