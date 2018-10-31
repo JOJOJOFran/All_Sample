@@ -31,10 +31,10 @@ namespace ConsoleApp1
 
             DateTime dt = DateTime.Now;  //当前时间  
 
-            DateTime startWeek = dt.AddDays(1 - Convert.ToInt32(dt.DayOfWeek.ToString("d"))).Date;  //本周周一  
-            DateTime endWeek = startWeek.AddDays(7).AddSeconds(-1);  //本周周日  
-            Console.WriteLine(startWeek);
-            Console.WriteLine(endWeek);
+            //DateTime startWeek = dt.AddDays(1 - Convert.ToInt32(dt.DayOfWeek.ToString("d"))).Date;  //本周周一  
+            //DateTime endWeek = startWeek.AddDays(7).AddSeconds(-1);  //本周周日  
+            //Console.WriteLine(startWeek);
+            //Console.WriteLine(endWeek);
             DateTime startMonth = dt.AddDays(1 - dt.Day).Date;  //本月月初  
             DateTime endMonth = startMonth.AddMonths(1).AddSeconds(-1);  //本月月末  
            //DateTime endMonth = startMonth.AddDays((dt.AddMonths(1) - dt).Days - 1);  //本月月末  

@@ -34,7 +34,7 @@ namespace DatasturctAndAlgo
 
 
             //return head1;
-            // SortTest();
+            SortTest();
 
             List<int> a = null;
 
@@ -118,7 +118,7 @@ namespace DatasturctAndAlgo
             array.CopyTo(newArray,0);
 
             Console.WriteLine("===冒泡测试===");
-            Sort.BubbleSort(array);
+            Sort.SelectSorted(array);
             for (int i = 0; i < array.Length; i++)
             {
                 Console.WriteLine(array[i]);

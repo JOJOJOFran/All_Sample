@@ -72,5 +72,33 @@ namespace DatasturctAndAlgo.Algo.Sort
             }
             return array;
         }
+
+        /// <summary>
+        /// 选择排序
+        /// 其实思路都和上面类似，主要就是从（0作为初）1开始的未排序部分依次找到最小的，放到i位置逐渐扩大排序部分
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public static int[] SelectSorted(int[] array)
+        {
+            int tmp = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                int min = array[i];
+                int minIndex = i;
+                for (int j = i+1; j < array.Length; j++)
+                {
+                    if (array[j]< min)
+                    {
+                        min = array[j];
+                        minIndex = j;
+                    }
+                }
+              //  tmp= array[i];
+                array[minIndex] = array[i];
+                array[i] = min;
+            }
+            return array;
+        }
     }
 }
