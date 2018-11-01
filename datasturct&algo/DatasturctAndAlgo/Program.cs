@@ -112,6 +112,7 @@ namespace DatasturctAndAlgo
         #region
         public static int[] array = new int[] { 6, 4, 3, 1, 2, 7, 8, 10, 9, 0 };
         public static int[] array1 = new int[] { 6, 4, 3, 1, 2, 7, 8, 10, 9, 0 };
+        public static int[] array2 = new int[] { 6, 4, 3, 1, 2, 7, 8, 10, 9, 0 };
         public static void SortTest()
         {
             int[] newArray = new int[10];
@@ -124,13 +125,19 @@ namespace DatasturctAndAlgo
                 Console.WriteLine(array[i]);
             }
 
+            Console.WriteLine("===插排测试===");
             Sort.InsertSort(array1);
             for (int i = 0; i < array1.Length; i++)
             {
                 Console.WriteLine(array1[i]);
             }
 
-
+            Console.WriteLine("===归并测试===");
+            Sort.MergeSort(array2);
+            for (int i = 0; i < array2.Length; i++)
+            {
+                Console.WriteLine(array2[i]);
+            }
 
         }
         #endregion
