@@ -119,6 +119,12 @@ namespace DatasturctAndAlgo.Algo.Sort
 
         #region 复杂度O(nlogn)的排序
         #region 归并排序
+        /// <summary>
+        /// 归并排序
+        /// 不稳定，
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
         public static int[] MergeSort(int[] array)
         {
             MergeSortRecursive(array, 0, array.Length - 1);
@@ -179,6 +185,51 @@ namespace DatasturctAndAlgo.Algo.Sort
                 array[i] = tmpArray[count++];
             }
 
+        }
+        #endregion
+
+        #region 快速排序
+        /// <summary>
+        /// 快速排序
+        /// 不稳定，原地排序
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        public static int[] QuickSort(int[] array)
+        {
+            QuickSortRecursive(array, 0, array.Length - 1);
+            return array;
+        }
+
+        private static void QuickSortRecursive(int[] array, int start, int end)
+        {
+            if (start < end)
+            {
+                int pivotIndex= QuickSortPartion(array, start, end);
+                QuickSortRecursive(array, start, pivotIndex - 1);
+                QuickSortRecursive(array, pivotIndex + 1,end);
+            }
+        }
+
+        private static int QuickSortPartion(int[] array, int start, int end)
+        {
+            int pivot = array[end];
+            int pivotIndex = start;
+            for (int i = start; i < end; i++)
+            { 
+                if (array[i] < pivot)
+                {
+                    int tmp = array[pivotIndex];
+                    array[pivotIndex] = array[i];
+                    array[i] = tmp;
+                    pivotIndex++;
+                }
+            }
+
+            int flag = array[pivotIndex];
+            array[pivotIndex] = pivot;
+            array[end] = flag;
+            return pivotIndex;
         }
         #endregion
         #endregion
