@@ -1,4 +1,5 @@
-﻿using DatasturctAndAlgo.Algo.LeetCode;
+﻿using DatasturctAndAlgo.Algo.BinarySearch;
+using DatasturctAndAlgo.Algo.LeetCode;
 using DatasturctAndAlgo.Algo.Sort;
 using DatasturctAndAlgo.Algo.链表问题;
 using DatasturctAndAlgo.LinkedList;
@@ -39,9 +40,11 @@ namespace DatasturctAndAlgo
             List<int> a = null;
 
             Console.WriteLine(a?.Count);
-            string b = "123";
+            string b = null;
 
             Console.WriteLine(b ?? "111");
+            Console.WriteLine(BinartSearchTest());
+            Console.WriteLine(BinartSearchTest1());
             Console.ReadKey();
         }
 
@@ -109,7 +112,7 @@ namespace DatasturctAndAlgo
         }
         #endregion
 
-        #region
+        #region 排序测试
         public static int[] array = new int[] { 6, 4, 3, 1, 2, 7, 8, 10, 9, 0 };
         public static int[] array1 = new int[] { 6, 4, 3, 1, 2, 7, 8, 10, 9, 0 };
         public static int[] array2 = new int[] { 6, 4, 3, 1, 2, 7, 8, 10, 9, 0 };
@@ -141,16 +144,39 @@ namespace DatasturctAndAlgo
             }
 
             Console.WriteLine("===快速测试===");
-            Sort.QuickSort(array2);
-            for (int i = 0; i < array2.Length; i++)
+            Sort.QuickSort(array3);
+            for (int i = 0; i < array3.Length; i++)
             {
-                Console.WriteLine(array2[i]);
+                Console.WriteLine(array3[i]);
             }
 
 
         }
         #endregion
 
+        #region 二分查找测试
+        public static int BinartSearchTest()
+        {
+            int[] array = new int[1000];
+            for (int i = 0; i < 1000; i++)
+            {
+                array[i] = i;
+            }
+
+          return  BinarySearch.BinarySearchWithCycle(array,367);
+        }
+
+        public static int BinartSearchTest1()
+        {
+            int[] array = new int[1000];
+            for (int i = 0; i < 1000; i++)
+            {
+                array[i] = i;
+            }
+
+            return BinarySearch.BinarySearchWithRecursion(array, 367);
+        }
+        #endregion
 
 
 
