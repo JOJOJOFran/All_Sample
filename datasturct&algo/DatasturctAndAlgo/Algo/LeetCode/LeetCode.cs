@@ -153,6 +153,60 @@ namespace DatasturctAndAlgo.Algo.LeetCode
         }
 
         /// <summary>
+        /// leetcode 33
+        /// Q:假设按照升序排序的数组在预先未知的某个点上进行了旋转。
+        ///  ( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。
+        ///  搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。
+        ///  你可以假设数组中不存在重复的元素。
+        ///  你的算法时间复杂度必须是 O(log n) 级别(二分查找)
+        ///  示例 1:输入: nums = [4,5,6,7,0,1,2], target = 0 输出: 4
+        ///  示例 2:输入: nums = [4,5,6,7,0,1,2], target = 3  输出: -1
+        /// T:通过中间点和end元素判断，哪个半区是有序的
+        ///   然后通过目标值是否在对应半区范围内，改变start end 值
+        /// </summary>
+        /// <returns></returns>
+        public static int LeetCode33_Search(int[] nums, int target)
+        {
+            int start = 0, end = nums.Length - 1;
+
+            while (start <= end)
+            {
+                int mid = start + ((end - start) >> 2);
+
+                if (nums[mid] == target)
+                    return mid;
+
+                //说明后半区是大致有序的
+                if (nums[mid] < nums[end])
+                {
+                    //除了中间点，判断时等于号不能掉
+                    if (target > nums[mid] && target <= nums[end])
+                    {
+                        start = mid + 1;
+                    }
+                    else
+                    {
+                        end = mid - 1;
+                    }
+
+                }
+                else
+                {
+                    //除了中间点，判断时等于号不能掉
+                    if (target >= nums[start] && target < nums[mid])
+                    {
+                        end = mid - 1;
+                    }
+                    else
+                    {
+                        start = mid + 1;
+                    }
+                }
+            }
+            return -1;
+        }
+
+        /// <summary>
         /// LeetCode 141
         /// Q:给定一个链表，判断链表中是否有环。
         /// T:用快慢节点，如果有环，一定会出现快节点和慢节点重合的时候

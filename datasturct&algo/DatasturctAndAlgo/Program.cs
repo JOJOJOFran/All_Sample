@@ -45,6 +45,8 @@ namespace DatasturctAndAlgo
             Console.WriteLine(b ?? "111");
             Console.WriteLine(BinartSearchTest());
             Console.WriteLine(BinartSearchTest1());
+            Console.WriteLine(BinartSearchTest2());
+            Console.WriteLine(BinartSearchTest3());
             Console.ReadKey();
         }
 
@@ -157,13 +159,13 @@ namespace DatasturctAndAlgo
         #region 二分查找测试
         public static int BinartSearchTest()
         {
-            int[] array = new int[1000];
-            for (int i = 0; i < 1000; i++)
+            int[] array = new int[2];
+            for (int i = 0; i < 2; i++)
             {
                 array[i] = i;
             }
 
-          return  BinarySearch.BinarySearchWithCycle(array,367);
+          return  BinarySearch.BinarySearchWithCycle(array,1);
         }
 
         public static int BinartSearchTest1()
@@ -175,6 +177,43 @@ namespace DatasturctAndAlgo
             }
 
             return BinarySearch.BinarySearchWithRecursion(array, 367);
+        }
+
+        public static int BinartSearchTest2()
+        {
+            int[] array = new int[1000];
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    array[i] = i;
+                }
+                else
+                {
+                    array[i] = i-1;
+                }
+               
+            }
+            return BinarySearch.BinarySearchToFindFristPoint(array, 2);
+        }
+
+
+        public static int BinartSearchTest3()
+        {
+            int[] array = new int[1000];
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    array[i] = i;
+                }
+                else
+                {
+                    array[i] = i - 1;
+                }
+
+            }
+            return BinarySearch.BinarySearchLastPoint(array, 2);
         }
         #endregion
 
