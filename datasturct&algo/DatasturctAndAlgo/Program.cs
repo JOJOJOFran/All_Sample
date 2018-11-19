@@ -3,6 +3,7 @@ using DatasturctAndAlgo.Algo.LeetCode;
 using DatasturctAndAlgo.Algo.Sort;
 using DatasturctAndAlgo.Algo.链表问题;
 using DatasturctAndAlgo.LinkedList;
+using DatasturctAndAlgo.Tree;
 using System;
 using System.Collections.Generic;
 
@@ -12,42 +13,34 @@ namespace DatasturctAndAlgo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Type:ArrayBinaryTreeTest=>数组二叉树测试示例：");
 
-            //LeetCode.LengthOfLongestSubstring("aabc");
-            //Console.WriteLine(LeetCode.LengthOfLongestSubstring("aabc"));
-            //Console.WriteLine(LeetCode.LengthOfLongestSubstring("qqqq"));
-            //Console.WriteLine(LeetCode.LengthOfLongestSubstring("qqwwqer"));
-            // SortedDictionary<>
+            //SortTest();
 
-            //SortedSet<int> set = new SortedSet<int>();
-            //SortedList<int, int> list = new SortedList<int, int>();
-            //int[] arry = new int[] { 1, 0, 9, 9, 7, 8, 53, 4, 46, 4, 4, 4, 7, 8, 9, 65, 3, 2 };
-            //for (int i = 0; i < arry.Length; i++)
-            //{
-            //    list.Add((arry[i]),i );
-            //    set.Add(arry[i]);
-            //}
-            //foreach (var item in list)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            //List<int> a = null;
 
+            //Console.WriteLine(a?.Count);
+            //string b = null;
 
-            //return head1;
-            SortTest();
-
-            List<int> a = null;
-
-            Console.WriteLine(a?.Count);
-            string b = null;
-
-            Console.WriteLine(b ?? "111");
-            Console.WriteLine(BinartSearchTest());
-            Console.WriteLine(BinartSearchTest1());
-            Console.WriteLine(BinartSearchTest2());
-            Console.WriteLine(BinartSearchTest3());
+            //Console.WriteLine(b ?? "111");
+            //Console.WriteLine(BinartSearchTest());
+            //Console.WriteLine(BinartSearchTest1());
+            //Console.WriteLine(BinartSearchTest2());
+            //Console.WriteLine(BinartSearchTest3());
+            Console.WriteLine("请根据提示输入Type");
+            TestFactory(Console.ReadLine());
             Console.ReadKey();
+        }
+
+        public static void TestFactory(string type)
+        {
+            switch (type)
+            {
+                case "ArrayBinaryTreeTest":
+                    ArrayBinaryTreeTest();
+                    break;
+
+            }
         }
 
         #region 链表结构测试
@@ -219,13 +212,22 @@ namespace DatasturctAndAlgo
 
 
 
+        private static void ArrayBinaryTreeTest()
+        {
+            ArrayBinaryTree arrayBinaryTree = new ArrayBinaryTree(1);
+            arrayBinaryTree.InsertLeft(1, 2);
+            arrayBinaryTree.InsertRight(1, 3);
+            arrayBinaryTree.InsertLeft(3, 6);
+            arrayBinaryTree.InsertRight(3, 7);
+
+            foreach (var item in arrayBinaryTree.Tree)
+            {
+                Console.WriteLine(item);
+            }
 
 
 
-
-
-
-
+        }
     }
 
 
