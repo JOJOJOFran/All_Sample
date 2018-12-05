@@ -22,11 +22,14 @@ namespace ConfigurationBuilder_Sample
                 {
                     Title = item["title"],
                     Width = Convert.ToInt32(item["width"])
+                     
                 });
+                Console.WriteLine(item["title"]);
+                Console.WriteLine(item["width"]);
             }
 
 
-            Console.WriteLine(titles.ToString());
+           
             Console.ReadKey();
         }
     }
