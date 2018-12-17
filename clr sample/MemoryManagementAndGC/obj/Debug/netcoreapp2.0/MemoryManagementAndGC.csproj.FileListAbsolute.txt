@@ -1,3 +1,0 @@
-D:\AllOrNothing\All_Sample\clr sample\MemoryManagementAndGC\obj\Debug\netcoreapp2.0\MemoryManagementAndGC.csproj.CoreCompileInputs.cache
-D:\AllOrNothing\All_Sample\clr sample\MemoryManagementAndGC\obj\Debug\netcoreapp2.0\MemoryManagementAndGC.AssemblyInfoInputs.cache
-D:\AllOrNothing\All_Sample\clr sample\MemoryManagementAndGC\obj\Debug\netcoreapp2.0\MemoryManagementAndGC.AssemblyInfo.cs

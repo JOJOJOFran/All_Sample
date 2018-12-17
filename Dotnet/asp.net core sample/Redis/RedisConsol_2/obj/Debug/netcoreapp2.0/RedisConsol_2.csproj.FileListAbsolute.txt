@@ -1,0 +1,11 @@
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\bin\Debug\netcoreapp2.0\RedisConsol_2.deps.json
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\bin\Debug\netcoreapp2.0\RedisConsol_2.runtimeconfig.json
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\bin\Debug\netcoreapp2.0\RedisConsol_2.runtimeconfig.dev.json
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\bin\Debug\netcoreapp2.0\RedisConsol_2.dll
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\obj\Debug\netcoreapp2.0\RedisConsol_2.csproj.CoreCompileInputs.cache
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\obj\Debug\netcoreapp2.0\RedisConsol_2.AssemblyInfoInputs.cache
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\obj\Debug\netcoreapp2.0\RedisConsol_2.AssemblyInfo.cs
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\bin\Debug\netcoreapp2.0\RedisConsol_2.pdb
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\obj\Debug\netcoreapp2.0\RedisConsol_2.dll
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\obj\Debug\netcoreapp2.0\RedisConsol_2.pdb
+D:\AllOrNothing\All_Sample\asp.net core sample\Redis\RedisConsol_2\obj\Debug\netcoreapp2.0\RedisConsol_2.csprojAssemblyReference.cache

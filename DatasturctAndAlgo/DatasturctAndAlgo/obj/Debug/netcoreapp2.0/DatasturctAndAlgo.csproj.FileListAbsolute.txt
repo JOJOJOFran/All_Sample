@@ -1,0 +1,11 @@
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\bin\Debug\netcoreapp2.0\DatasturctAndAlgo.deps.json
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\bin\Debug\netcoreapp2.0\DatasturctAndAlgo.runtimeconfig.json
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\bin\Debug\netcoreapp2.0\DatasturctAndAlgo.runtimeconfig.dev.json
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\bin\Debug\netcoreapp2.0\DatasturctAndAlgo.dll
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\bin\Debug\netcoreapp2.0\DatasturctAndAlgo.pdb
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\obj\Debug\netcoreapp2.0\DatasturctAndAlgo.csprojResolveAssemblyReference.cache
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\obj\Debug\netcoreapp2.0\DatasturctAndAlgo.csproj.CoreCompileInputs.cache
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\obj\Debug\netcoreapp2.0\DatasturctAndAlgo.AssemblyInfoInputs.cache
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\obj\Debug\netcoreapp2.0\DatasturctAndAlgo.AssemblyInfo.cs
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\obj\Debug\netcoreapp2.0\DatasturctAndAlgo.dll
+D:\AllOrNothing\All_Sample\datasturct&algo\DatasturctAndAlgo\obj\Debug\netcoreapp2.0\DatasturctAndAlgo.pdb

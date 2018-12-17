@@ -62,3 +62,67 @@ clr sample/async threading/
 clr sample/ConsoleApp1/bin/
 
 clr sample/ConsoleApp1/obj/
+
+clr sample/MemoryManagementAndGC/obj/
+
+DatasturctAndAlgo/\.vs/
+
+DatasturctAndAlgo/DatasturctAndAlgo/bin/
+
+Dotnet/clr sample/ConsoleApp1/bin/
+
+Dotnet/clr sample/ConsoleApp1/obj/
+
+Dotnet/clr sample/async threading/\.vs/
+
+Dotnet/clr sample/async threading/\.vscode/
+
+Dotnet/clr sample/async threading/AboutTaskTest/bin/
+
+Dotnet/clr sample/async threading/AboutTaskTest/obj/
+
+Dotnet/clr sample/async threading/AsyncTaskDemo/bin/
+
+Dotnet/clr sample/async threading/AsyncTaskDemo/obj/
+
+Dotnet/clr sample/async threading/Interlocked/bin/
+
+Dotnet/clr sample/async threading/Interlocked/obj/
+
+Dotnet/clr sample/MemoryManagementAndGC/\.vs/
+
+Dotnet/clr sample/MemoryManagementAndGC/obj/
+
+Dotnet/asp\.net core sample/Common/\.vs/
+
+Dotnet/asp\.net core sample/Common/CommonApi/bin/
+
+Dotnet/asp\.net core sample/Common/CommonApi/obj/
+
+Dotnet/asp\.net core sample/Configuration/\.vs/
+
+Dotnet/asp\.net core sample/IDS4_Demo/\.vs/
+
+Dotnet/asp\.net core sample/IDS4_Demo/IdentityServerCenter/bin/
+
+Dotnet/asp\.net core sample/IDS4_Demo/IdentityServerCenter/obj/
+
+Dotnet/asp\.net core sample/Middleware/bin/
+
+Dotnet/asp\.net core sample/Middleware/obj/
+
+Dotnet/asp\.net core sample/Redis/\.vs/
+
+Dotnet/asp\.net core sample/加密/
+
+Dotnet/asp\.net core sample/基础/\.vs/
+
+Dotnet/asp\.net core sample/基础/ConsoleApp1/bin/
+
+Dotnet/asp\.net core sample/基础/ConsoleApp1/obj/
+
+Dotnet/asp\.net core sample/简单实现系统数据类型/\.vs/
+
+Dotnet/asp\.net core sample/简单实现系统数据类型/BaseDataStruct/bin/
+
+Dotnet/asp\.net core sample/简单实现系统数据类型/BaseDataStruct/obj/
