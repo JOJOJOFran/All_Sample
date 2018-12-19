@@ -1,0 +1,52 @@
+<html>
+    <head>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    </head>
+    <body>
+       <!--模板绑定 -->
+       <div id="app">
+            {{message}}
+       </div>
+        <!--v-bind:指令 -->
+       <div id="app2">
+           <span v-bind:title="msg">
+                v-bind指令示例：鼠标悬停几秒钟查看此处动态绑定的提示信息！
+           </span>
+       </div>
+      
+       <!--v-if:条件判断-->
+       <div id="app3">
+           <p v-if="seen">当seen的值为true的时候，才能看到我！</p>
+       </div>
+       <!-- v-for:循环 -->
+       <!-- todo in todos 必须要-->
+       <div id="app4">
+           <ol>
+               <li v-for="todo in todos">
+                   {{todo.text}}
+               </li>
+           </ol>
+       </div>
+
+       <!-- v-on:添加事件监听器-->
+       <div id="app5">
+           <p>{{message}}</p>
+           <button v-on:click="reverMessage">逆转消息</button>
+       </div>
+
+       <!-- v-model:双向绑定-->
+       <div id="app6">
+           <p>{{msg}}</p>
+           <input v-model="msg">
+       </div>
+
+       <div id="moudle">
+            <ol>
+                <todo-item></todo-item>
+            </ol>
+       </div>
+       <script src="index.js"></script>
+       <script src="module.js"></script>
+    </body>
+</html>
