@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace AsyncTaskDemo
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("根据编号选择方法进行执行,请输入对应编号");
             TitleSet();
@@ -21,6 +22,8 @@ namespace AsyncTaskDemo
             Console.WriteLine("4.APM模式");
             Console.WriteLine("5.任务取消");
             Console.WriteLine("6.Task异常处理");
+            Console.WriteLine("=============");
+            Console.WriteLine("7.Async=>DosomethingAsync");
             Console.WriteLine("待续。。。。");
         }
 
@@ -45,6 +48,9 @@ namespace AsyncTaskDemo
                     break;
                 case "6":
                     TaskPart.TaskExceptionTest();
+                    break;
+                 case "7":
+                    AsyncPart.DosomethingAsync();
                     break;
                 case "exit":
                     Console.WriteLine("按任意键将推出程序！");

@@ -261,5 +261,41 @@ namespace AsyncTaskDemo
         }
         #endregion
 
+        #region 任务并行
+        public static void TaskAll()
+        {
+            var firstTask = new Task<int>(() => { return TaskMethod("First Task", 3); });
+            var secondTask =new Task<int>(() => { return TaskMethod("Second Task", 4); });
+
+            var whenAllTask= Task.WhenAll(firstTask,secondTask);
+            whenAllTask.ContinueWith(t=>{
+                Console.WriteLine($"Frist Task Result is:{t.Result[0]},the second is:{t.Result[1]}");
+                },TaskContinuationOptions.OnlyOnRanToCompletion);
+
+            firstTask.Start();
+            secondTask.Start();
+
+            Thread.Sleep(TimeSpan.FromSeconds(4));
+
+            var tasks=new List<Task<int>>();
+            for(int i=0;i<4;i++)
+            {
+                var task=new Task<int>(()=>TaskMethod($"Task {i}",i));
+                tasks.Add(task);
+                task.Start();
+            }
+
+            while(tasks.Count>0)
+            {
+                var complexTask=Task.WhenAny(tasks).Result;
+                tasks.Remove(complexTask);
+                Console.WriteLine($"A Task has been completed with result {complexTask.Result}");
+            }
+
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+
+        }
+        #endregion
+
     }
 }
