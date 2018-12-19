@@ -197,6 +197,7 @@ vue create myapp
 ```
 
 #### 项目结构
+```shell
 
 ├── node_modules     # 项目依赖包目录
 ├── public
@@ -215,6 +216,7 @@ vue create myapp
 ├── babel.config.js  # babel配置文件
 ├── package.json     # 包管理文件
 └── yarn.lock        # yarn依赖信息文件
+```
 
 #### 运行项目
 
