@@ -8,7 +8,131 @@
 
 <http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html> 
 
-## 依赖
+虽然没有完全遵循 MVVM 模型，但是 Vue 的设计也受到了它的启发。因此在文档中经常会使用 vm (ViewModel 的缩写) 这个变量名表示 Vue 实例。
+
+### vue实例
+
+新建一个实例：
+
+```js
+var vm =new Vue({
+    //选项
+}) 
+```
+
+创建Vue实例时，可以传入一个选项对象。一个Vue应用可以有一个new Vue创建的根实例组成，也可以由可选的嵌套的，可复用的组件树组成。
+
+你需要明白所有的 Vue 组件都是 Vue 实例，并且接受相同的选项对象 (一些根实例特有的选项除外)
+
+### 数据与方法
+
+vue的数据变动会触发绑定视图的刷新，如：
+
+```js
+// 我们的数据对象
+var msg = { a: 1 }
+
+// 该对象被加入到一个 Vue 实例中
+var vm = new Vue({
+  data: msg
+})
+
+// 获得这个实例上的属性
+// 返回源数据中对应的字段
+vm.a == data.a // => true
+
+// 设置属性也会影响到原始数据
+vm.a = 2
+data.a // => 2
+
+// ……反之亦然
+data.a = 3
+vm.a // => 3
+```
+
+但是，只有创建时存在的属性，才是响应式的。
+
+```js
+vm.b = 'hi' //b不会触发更新
+```
+
+Object.freeze()阻止属性响应触发视图刷新：
+
+```js
+//创建数据对象obj
+var obj=new {foo:'bar'}
+
+Object.freeze(obj);
+
+new Vue({
+   el:'#app',
+   data:obj
+});
+```
+
+除了数据属性，Vue 实例还暴露了一些有用的实例属性与方法。它们都有前缀 `$`，以便与用户定义的属性区分开来。例如：
+
+```js
+var data = { a: 1 }
+var vm = new Vue({
+  el: '#example',
+  data: data
+})
+
+vm.$data === data // => true
+vm.$el === document.getElementById('example') // => true
+
+// $watch 是一个实例方法
+vm.$watch('a', function (newValue, oldValue) {
+  // 这个回调将在 `vm.a` 改变后调用
+})
+```
+
+api地址：https://cn.vuejs.org/v2/api/#%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7
+
+### 生命周期
+
+创建Vue实例时，会经历一系列过程，如：设置数据监听，编译模板，将实例挂载到DOM并在数据变化时更新DOM等。
+
+也会运行一些叫“生命周期钩子”的函数，给用户提供在不同阶段添加自己的代码的机会。
+
+钩子函数有如：
+
+beforeCreate,Create,beforeMount,mounted,beforeUpdate,update,beforeDestroy,destroyed
+
+#### Tips
+
+生命周期钩子函数的 `this` 上下文指向调用它的 Vue 实例
+
+#### Tips
+
+不要在选项属性或回调上使用[箭头函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)，比如 `created: () => console.log(this.a)` 或 `vm.$watch('a', newValue => this.myMethod())`。因为箭头函数是和父级上下文绑定在一起的，`this` 不会是如你所预期的 Vue 实例，经常导致 `Uncaught TypeError: Cannot read property of undefined` 或 `Uncaught TypeError: this.myMethod is not a function` 之类的错误。
+
+#### 图示：
+
+![Vue å®ä¾çå½å¨æ](https://cn.vuejs.org/images/lifecycle.png)
+
+### 引用
+
+#### vue.js文件：
+
+开发版：https://vuejs.org/js/vue.js
+
+生产版：https://vuejs.org/js/vue.min.js
+
+#### CDN引用:
+
+```js
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>  
+```
+
+你可以在 [cdn.jsdelivr.net/npm/vue](https://cdn.jsdelivr.net/npm/vue/) 浏览 NPM 包的源代码。
+
+Vue 也可以在 [unpkg](https://unpkg.com/vue@2.5.21/dist/vue.js) 和 [cdnjs](https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js) 上获取 (cdnjs 的版本更新可能略滞后)。
+
+请确认了解[不同构建版本](https://cn.vuejs.org/v2/guide/installation.html#%E5%AF%B9%E4%B8%8D%E5%90%8C%E6%9E%84%E5%BB%BA%E7%89%88%E6%9C%AC%E7%9A%84%E8%A7%A3%E9%87%8A)并在你发布的站点中使用**生产环境版本**，把 `vue.js` 换成 `vue.min.js`。这是一个更小的构建，可以带来比开发环境下更快的速度体验。
+
+## XXXX
 
 环境：node.js 
 
