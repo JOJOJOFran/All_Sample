@@ -90,6 +90,63 @@ vm.$watch('a', function (newValue, oldValue) {
 
 api地址：https://cn.vuejs.org/v2/api/#%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7
 
+### 计算属性
+
+添加计算属性
+
+```js
+<div id="example">
+  <p>Original message: "{{ message }}"</p>
+  <p>Computed reversed message: "{{ attachMessage }}"</p>
+</div>
+
+var vm =new Vuew({
+    el:"#example",
+    data:{message:'hello'},
+    computed:{
+        	attachMessage:function(){
+        			return this.message+'!'
+    	}
+    }
+})
+```
+
+计算属性默认只有 getter ，不过在需要时你也可以提供一个 setter ：
+
+```js
+computed: {
+  fullName: {
+    // getter
+    get: function () {
+      return this.firstName + ' ' + this.lastName
+    },
+    // setter
+    set: function (newValue) {
+      var names = newValue.split(' ')
+      this.firstName = names[0]
+      this.lastName = names[names.length - 1]
+    }
+  }
+}
+```
+
+还可以通过方法来达到同样的效果
+
+```js
+<p>Reversed message: "{{ reversedMessage() }}"</p>
+
+// 在组件中
+methods: {
+  reversedMessage: function () {
+    return this.message.split('').reverse().join('')
+  }
+}
+```
+
+区别：计算属性是基于它们的依赖进行缓存的，只在相关依赖发生改变时它们才会重新计算，但是直接使用方法，没访问一次就需要计算一次，当然使用属性会节省开销一些。
+
+### 监听
+
 ### 生命周期
 
 创建Vue实例时，会经历一系列过程，如：设置数据监听，编译模板，将实例挂载到DOM并在数据变化时更新DOM等。
