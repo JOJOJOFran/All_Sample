@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiWithRedisDockerTest.Filter;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
 
 namespace ApiWithRedisDockerTest.Controllers
@@ -11,10 +13,20 @@ namespace ApiWithRedisDockerTest.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly ILogger _logger;
+
+        public ValuesController(ILoggerFactory loggerFactory)
+        {
+            _logger = loggerFactory.CreateLogger("ValuesController");
+        }
+
         // GET api/values
         [HttpGet]
+        [Aduit]
         public async Task<ActionResult<IEnumerable<string>>> Get()
         {
+            _logger.LogDebug("Test");
+            Console.WriteLine("test");
             ConnectionMultiplexer conn = await ConnectionMultiplexer.ConnectAsync("localhost");
             IDatabase db = conn.GetDatabase(0);
             var item = db.StringGet("mykey");

@@ -1,0 +1,11 @@
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\bin\Debug\netcoreapp2.1\IdentityServerQuickStart.deps.json
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\bin\Debug\netcoreapp2.1\IdentityServerQuickStart.runtimeconfig.json
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\bin\Debug\netcoreapp2.1\IdentityServerQuickStart.runtimeconfig.dev.json
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\bin\Debug\netcoreapp2.1\IdentityServerQuickStart.dll
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\obj\Debug\netcoreapp2.1\IdentityServerQuickStart.csprojAssemblyReference.cache
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\obj\Debug\netcoreapp2.1\IdentityServerQuickStart.csproj.CoreCompileInputs.cache
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\obj\Debug\netcoreapp2.1\IdentityServerQuickStart.RazorAssemblyInfo.cache
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\obj\Debug\netcoreapp2.1\IdentityServerQuickStart.RazorAssemblyInfo.cs
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\obj\Debug\netcoreapp2.1\IdentityServerQuickStart.AssemblyInfoInputs.cache
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\obj\Debug\netcoreapp2.1\IdentityServerQuickStart.AssemblyInfo.cs
+D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\IDS4_Demo\StartUp\IdentityServerQuickStart\obj\Debug\netcoreapp2.1\IdentityServerQuickStart.RazorTargetAssemblyInfo.cache

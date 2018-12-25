@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiWithRedisDockerTest", "ApiWithRedisDockerTest\ApiWithRedisDockerTest.csproj", "{05273EEE-4C26-4D82-AD31-DC285B76B8C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerQuickStart", "IdentityServerQuickStart\IdentityServerQuickStart.csproj", "{BAA7E778-194F-4E31-8325-33C86424FC5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{05273EEE-4C26-4D82-AD31-DC285B76B8C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05273EEE-4C26-4D82-AD31-DC285B76B8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05273EEE-4C26-4D82-AD31-DC285B76B8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05273EEE-4C26-4D82-AD31-DC285B76B8C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAA7E778-194F-4E31-8325-33C86424FC5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA7E778-194F-4E31-8325-33C86424FC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA7E778-194F-4E31-8325-33C86424FC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA7E778-194F-4E31-8325-33C86424FC5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F3E28766-5984-40F4-AEBE-2C5BFC91E4D3}
+		SolutionGuid = {55CF0DF5-7F7F-4DDF-A305-D9CD31D632CB}
 	EndGlobalSection
 EndGlobal
