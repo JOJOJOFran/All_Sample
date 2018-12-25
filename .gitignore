@@ -57,7 +57,7 @@ Asp\.net core sample/基础/ConsoleApp1/bin/
 
 datasturct&algo/DatasturctAndAlgo\.v12\.suo
 
-clr sample/async threading/
+\.vscode/
 
 clr sample/ConsoleApp1/bin/
 
@@ -130,11 +130,3 @@ Dotnet/asp\.net core sample/简单实现系统数据类型/BaseDataStruct/obj/
 Dotnet/\.vscode/
 
 Dotnet/asp\.net core sample/Redis/ApiWithRedisDockerTest/obj/
-
-Dotnet/asp\.net core sample/IDS4_Demo/ResourceApiByIDS4/\.vs/
-
-Dotnet/asp\.net core sample/IDS4_Demo/ResourceApiByIDS4/bin/
-
-Dotnet/asp\.net core sample/IDS4_Demo/ResourceApiByIDS4/obj/
-
-Dotnet/asp\.net core sample/Redis/ApiWithRedisDockerTest/bin/
