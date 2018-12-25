@@ -1,6 +1,6 @@
 [TOC]
 
-#Dotnet的多线程和异步
+#CLR的多线程和异步
 
 ## 概述
 
@@ -188,7 +188,112 @@ public static void ComputeBoundOp(Object state)
 
 #### 协作式取消和超时
 
+##### 介绍
 
+想要取消操作都必须依靠System.Threading.Cancellation.TokenSource对象，简单看下如下：
+
+```c#
+public sealed class CancellationTokenSource:IDisposable
+{
+    public CancellationTokenSource();
+    public void Dispose();
+    
+    public Boolean IsCancellationRequested{get;}
+    public CancellationToken Token{get;}
+    
+    public void Cancel();
+    public void Cancel(Boolean throwOnFirstException);
+    ...
+}
+```
+
+主要还是要依赖Token属性，CancellationToken是一个轻量的值类型,如下：
+
+```c#
+public struct CancellationToken
+{
+    public static CancellationToken None{get;}  //指定此值得代表不能被取消
+    
+    public Boolean IsCancellationRequested{get;}; //Task调用的操作中作为判断标志，cts的Cancel方法触发
+    public void ThrowIfCancellationRequested(); //由Task调用的操作调用
+    
+    //CancellationTokenSource取消时，WaitHandle会收到信号
+    public WaitHandle{get;}
+    
+    public Boolean CanBeCanceled{get;} //很少使用
+    
+    //Registers a delegate that will be called when this System.Threading.CancellationToken
+    //is canceled.
+    public CancellationTokenReqistration Register(Action<Object> callback,Object state,Boolean useSynchronizationContext);   //还有很多重载方法
+}
+```
+
+##### 通过调用IsCancellationRequester属性来取消
+
+```c#
+       static int TaskMethodWithCancel(string name,CancellationToken token,int second)
+        {
+            for(int i=1;i<=100;i++)
+            {
+                var msg= i%100;
+                Console.WriteLine($"任务执行进度:{msg} %");
+                Thread.Sleep(TimeSpan.FromSeconds(0.1));
+                //当IsCancellationRequested被改变为true时则跳出当前操作
+                if(token.IsCancellationRequested)
+                    return -1;
+            }
+            return TaskMethod(name,second);
+        }
+
+
+        public static void TaskCancelTest()
+        {
+            var cts =new CancellationTokenSource();
+            var longTask=new Task<int>(()=>TaskMethodWithCancel("Task1",cts.Token,10),cts.Token);
+            
+            Console.WriteLine(longTask.Status);
+            Thread.Sleep(TimeSpan.FromSeconds(0.5));
+            longTask.Start();
+            Thread.Sleep(TimeSpan.FromSeconds(9));
+            //CancellationTokenSource的Cancel方法改变IsCancellationRequested的值，从而从操作中跳出
+            cts.Cancel();
+            Thread.Sleep(TimeSpan.FromSeconds(0.5));
+            Console.WriteLine(longTask.Status);
+        } 
+```
+
+##### 通过传递Token的属性来禁止取消
+
+如果传给操作的CancellationToken的值是None，则IsCancellationRequested一直返回false,CanBeCanceled属性也为false(一般这个都是true代表可以取消)。
+
+##### 通过Register方法登记
+
+通过Register方法注册一个或多个委托（多个就是多次注册），当CancellationToken被取消时，委托会被调用。
+
+```c#
+public CancellationTokenRegistration Register(Action callback);
+public CancellationTokenRegistration Register(Action callback, bool useSynchronizationContext);
+public CancellationTokenRegistration Register(Action<object> callback, object state);
+public CancellationTokenRegistration Register(Action<object> callback, object state, bool useSynchronizationContext);
+```
+
+重载大概就以上这几种，重要的参数一个就是一个委托方法，一个useSynchronizationContext 布尔值得参数，以及state数据。callback以及state就不赘述了，主要是useSynchronizationContext ，代表是否调用线程的SynchronizationContext (同步上下文)。如果为false则Cancel会顺序（由于线程池的队列是个先入后出的，所以这里应该是倒序）调用登记的所有方法。如果为true，则回调方法会send给同步上下文对象，由上下文决定哪个线程去调用。
+
+```C#
+var cts=new CancellationTokenSource();
+cts.Token.Register(()=>Console.WriteLine("Canceled 1"));
+cts.Token.Register(()=>Console.WriteLine("Canceled 2"));
+cts.Cancel();
+
+得到结果：
+Canceled 2
+Canceled 1
+//如上面所说，是倒序的
+```
+
+##### Register中的异常问题
+
+如果多个回调中的某一个方法或者多个方法出现异常，CancellationTokenSource 的Cancel方法有一个带bool值得重载方法，如果传递了true,则抛出异常并阻止后面的回调执行。如果为false，或者选择不传，那么回调方法会一直执行，并将所有的异常添加到一个集合，在Cancel的方法栈上抛出一个AggregateEception的方法，如果想看具体的异常需要从集合属性InnerExceptions去查看，注意不是InnerException,后面这个异常类还会经常看到，我们需要掌握怎么处理它。
 
 ### Task
 
