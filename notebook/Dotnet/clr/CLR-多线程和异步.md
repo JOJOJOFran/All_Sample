@@ -98,7 +98,82 @@ CLR线程要么是前台线程，要么是后台线程，一个进程的所有�
 
 ## 线程池
 
+#### 执行上下文（Excution Context）
+
+当当前执行线程，使用另一个线程（辅助线程）执行任务时就会发生执行上下文的切换。
+
+执行上下文：是一种包含安全设置（压缩栈，Thread的Principal属性和windows身份），宿主设置（参见System.Threading.HostExecutionContextManager）以及逻辑调用上下文数据（System.Runtime.Remoting.Messaging.CallContext的LogicalSetData和LogicGetData方法）。作用是为了确保辅助线程能够使用相同的安全设置和宿主设置以及逻辑数据的数据结构。
+
+所谓切换其实，就是复制一份数据给辅助线程，随着大量的上下文数据的复制，会有效率损耗，某些情况下你可以禁止执行上下文的切换。
+
+System.Threading提供了一个ExecutionContext类，它允许你控制线程的执行上下文如何流向另一个线程，类定义如下：
+
+```c#
+public sealed class ExecutionContext:IDisposable,Iserializable
+{
+    [SecurityCritical]
+    public static AsyncFlowControl SuppressFlow();
+    public static void RestoreFlow();
+    public static Boolean IsFlowSuppressed();
+}
+```
+
+当你的线程不需要执行上下文时，你可以通过这个类去禁止上下文的流动，在服务器程序上可能有显著提升，示例：
+
+```c#
+            //设置数据到逻辑调用上下文中
+            CallContext.LogicalSetData("name", "Fran");
+
+            //向线程池插入一个工作项，并将逻辑上下文中的数据传过去
+            //并成功传递数据
+            ThreadPool.QueueUserWorkItem(state => { 
+                Console.WriteLine("Name={0}", CallContext.GetData("name")); });
+
+            //禁止执行上下文的流动
+            ExecutionContext.SuppressFlow();
+            //查看当前是否允许上下文流动
+            Console.WriteLine(ExecutionContext.IsFlowSuppressed());
+
+            //这个时候获取不到name的值
+            ThreadPool.QueueUserWorkItem(state => { 
+                Console.WriteLine("Name={0}", CallContext.GetData("name")); });
+
+            //恢复上下文的流动
+            ExecutionContext.RestoreFlow();
+```
+
+
+
 ### QueueUserWorkItem
+
+#### 介绍
+
+QueueUserWorkItem是ThredPool的一个静态方法，定义如下：
+
+```c#
+static Boolean QueueUserWorkItem(WaitCallback callback);
+static Boolean QueueUserWorkItem(WaitCallback callback,Object state)
+```
+
+示例：
+
+```c#
+......
+ThreadPool.QueueUserWorkItem(ComputeBoundOp, 5);
+.......
+    
+public static void ComputeBoundOp(Object state) 
+        {
+            Console.WriteLine(state);
+            Thread.Sleep(1000);
+        }
+```
+
+它会往线程池的队列插一个工作项，参数如上主要是回调函数。然后，所有方法会直接返回，相比其他的方法消耗低更简易。你无法捕捉他的结果或允许状态，也无法让他按你的设想的方式或顺序运行，所以这个时候就会提到我们后面要说到的Task。
+
+#### 协作式取消和超时
+
+
 
 ### Task
 
