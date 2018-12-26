@@ -231,35 +231,20 @@ public struct CancellationToken
 ##### 通过调用IsCancellationRequester属性来取消
 
 ```c#
-       static int TaskMethodWithCancel(string name,CancellationToken token,int second)
+public static void Count(CancellationToken token,int n)
+{
+    for(;n>0;n--)
+    {
+        if(token.IsCancellationRequested)
         {
-            for(int i=1;i<=100;i++)
-            {
-                var msg= i%100;
-                Console.WriteLine($"任务执行进度:{msg} %");
-                Thread.Sleep(TimeSpan.FromSeconds(0.1));
-                //当IsCancellationRequested被改变为true时则跳出当前操作
-                if(token.IsCancellationRequested)
-                    return -1;
-            }
-            return TaskMethod(name,second);
+            return;
         }
-
-
-        public static void TaskCancelTest()
-        {
-            var cts =new CancellationTokenSource();
-            var longTask=new Task<int>(()=>TaskMethodWithCancel("Task1",cts.Token,10),cts.Token);
-            
-            Console.WriteLine(longTask.Status);
-            Thread.Sleep(TimeSpan.FromSeconds(0.5));
-            longTask.Start();
-            Thread.Sleep(TimeSpan.FromSeconds(9));
-            //CancellationTokenSource的Cancel方法改变IsCancellationRequested的值，从而从操作中跳出
-            cts.Cancel();
-            Thread.Sleep(TimeSpan.FromSeconds(0.5));
-            Console.WriteLine(longTask.Status);
-        } 
+    }
+}
+...
+CancellationTokenSource cts=new CancellationTokenSource();
+ThreadPool.QueueUserWorkItem(()=>Count(cts.Token,10000));
+cts.Cancel();
 ```
 
 ##### 通过传递Token的属性来禁止取消
@@ -297,9 +282,156 @@ Canceled 1
 
 ### Task
 
+
+
+#### 使用Task开启一个异步任务
+
+我们可以new一个对象去调用start方法开启一个任务，也可以直接调用静态方法Run去开启，如下：
+
+```c#
+new Task(ComputeBoundOp,5).Start();
+Task.Run(()=>ComputeBoundOp(5));
+```
+
+#### TaskCreationOptions：控制Task执行方式
+
+通过往Task构造函数传递TaskCreationOptions可以约束Task的行为，TaskCreationOptions定义如下：
+
+```c#
+[Flags,Serizlizable]
+publi enum TaskCreationOptions
+{
+    None = 0x0000, //默认
+    //提议TaskScheduler尽快执行该任务
+    PreferFairness = 0x0001,
+    //提议TaskScheduler应尽可能的创建线程池线程
+    LongRunning = 0x0002,
+    //该提议总是被采纳：将一个Task和它的父Task关联
+    AttachedToParent = 0x0004,
+    //该提议总是被采纳：如果一个任务试图和这个任务进行父任务连接，那个任务不会是子任务而是普通任务
+    DenyChildAttach = 0x0008,
+    //该提议总是被采纳：强迫子任务使用默认调度器而不是父任务的调度器
+    HideScheduler = 0x0010
+}
+```
+
+有的只是提议，并不一定会被采纳，有的则一定会采纳。
+
+#### 获取Task的结果
+
+Task的结果一般通过Task的泛型派生类Task<TResult>，TResult用来传递操作的返回值类型，通过Result属性来获取返回值，如下：
+
+```c#
+private static int Sum(int n)
+{
+    int sum=0;
+    for(;n>0;n--)
+        checked{
+            sum+=n;
+        }
+    return sum;
+}
+...
+Task<int> task=new Task<int>(n=>Sum((int)n),10000);
+//启动任务
+Task.Start();
+//显示等待,会阻塞线程最好不要使用
+Task.Wait()； //可以接受timeout和CancellationToken作为参数重载
+//获取结果
+Console.WriteLine("This Sum is:"+task.Result);
+...
+```
+
+
+
+#### Task的取消
+
+取消同样都必须经过CancellationTokenSource对象的Token属性去完成,使用起来和QueueUserWorkItem类似，如下：
+
+通过ThrowIfCancellationRequestd取消：
+
+```c# 
+private static int Sum(int n,CancellationToken token)
+{
+    int sum=0;
+    for(;n>0;n--)
+    {
+    	//外面调用Cancel方法，如果该操作还在执行就会抛出这个异常
+    	token.ThrowIfCancellationRequestd();
+        checked{  sum+=n;}
+    } 
+    return sum;
+}
+...
+CancellationTokenSource cts=new CancellationTokenSource();
+Task<int> task=Task.Run(()=>Sum(cts.Token,10000),cts.Token);
+cts.Cancel();
+try{
+    //Task的异常通常只会在调用Wait方法和Result属性才会从内部抛出一个AggregateException的异常
+    Console.WriteLine("The Sum is:"+task.Result);
+}
+catch(AggregateException x)
+{
+    //将OperationCanceledException异常视为已处理
+    x.Handle(e=>e is OperationCanceledException);
+    Console.WriteLine("Sum was Canceled");
+}
+```
+
+通过IsCancellationRequested取消：
+
+```c#
+   static int TaskMethodWithCancel(string name,CancellationToken token,int second)
+    {
+        for(int i=1;i<=100;i++)
+        {
+            var msg= i%100;
+            Console.WriteLine($"任务执行进度:{msg} %");
+            Thread.Sleep(TimeSpan.FromSeconds(0.1));
+            //当IsCancellationRequested被改变为true时则跳出当前操作
+            if(token.IsCancellationRequested)
+                return -1;
+        }
+        return TaskMethod(name,second);
+    }
+
+    public static void TaskCancelTest()
+    {
+        var cts =new CancellationTokenSource();
+        var longTask=new Task<int>(()=>TaskMethodWithCancel("Task1",cts.Token,10),cts.Token);
+        
+        Console.WriteLine(longTask.Status);
+        Thread.Sleep(TimeSpan.FromSeconds(0.5));
+        longTask.Start();
+        Thread.Sleep(TimeSpan.FromSeconds(9));
+        //CancellationTokenSource的Cancel方法改变IsCancellationRequested的值，从而从操作中跳出
+        cts.Cancel();
+        Thread.Sleep(TimeSpan.FromSeconds(0.5));
+        Console.WriteLine(longTask.Status);
+    } 
+```
+
+
+
+在Task的构造函数中传递CancellationTokenSource，从而使两者关联。无论是new一个，还是使用Run都是将其绑定起来。虽然，Task关联了CancellationTokenSource对象，但是却没有办法访问它，所以一般是将cts.Token作为闭包变量传递给lambda表达式，如上面两个示例一样。
+
+如果，任务还未开始就取消了，那么Task无法继续执行并且会抛出一个InvalidOperationException。
+
+#### Task完成时启动新任务
+
+前面说过，Wait方法会阻塞线程。通常，我们无法预料Task任务的执行顺序，但是有时候，我们又明确希望任务2在任务1执行完之后才执行，或者说我们想查询Task的Result属性，但是我们却无法保证不用Wait查询的时候Task指定的任务已经执行完成了，这时候我们无法获取正确的结果，还会浪费资源去获取结果。
+
+以上，为了解决上述问题，我们可以通过ContinuWith来在指定任务完成后去进行某些操作。
+
+#### Task开启子任务
+
+#### Task异常处理
+
+
+
 ### Parallel
 
-### TaskScheduler
+### TaskScheduler&TaskFactory
 
 ### 线程调度过程
 
