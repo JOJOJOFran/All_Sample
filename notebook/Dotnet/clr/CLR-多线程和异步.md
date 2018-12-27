@@ -282,7 +282,9 @@ Canceled 1
 
 ### Task
 
+#### 介绍
 
+使用ThreadPool.QueueUserWorkItem执行异步操作，非常简单。大事，它没有内建机制让你知道它什么时候完成，也无法传递结果值。所以，CLR提供了System.Tasks命名空间下的Task类型来构建任务的概念。
 
 #### 使用Task开启一个异步任务
 
