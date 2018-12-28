@@ -282,15 +282,14 @@ Canceled 1
 
 ### Task
 
-
-
 #### 使用Task开启一个异步任务
 
 我们可以new一个对象去调用start方法开启一个任务，也可以直接调用静态方法Run去开启，如下：
 
 ```c#
 new Task(ComputeBoundOp,5).Start();
-Task.Run(()=>ComputeBoundOp(5));
+Task.Run(()=>ComputeBoundOp(5));   //只是Task.Factory.StartNew的快捷方式
+Task.Factory.StartNew(()=>ComputeBoundOp(5));
 ```
 
 #### TaskCreationOptions：控制Task执行方式
@@ -417,21 +416,56 @@ catch(AggregateException x)
 
 如果，任务还未开始就取消了，那么Task无法继续执行并且会抛出一个InvalidOperationException。
 
+#### 等待Task的完成
+
 #### Task完成时启动新任务
 
 前面说过，Wait方法会阻塞线程。通常，我们无法预料Task任务的执行顺序，但是有时候，我们又明确希望任务2在任务1执行完之后才执行，或者说我们想查询Task的Result属性，但是我们却无法保证不用Wait查询的时候Task指定的任务已经执行完成了，这时候我们无法获取正确的结果，还会浪费资源去获取结果。
 
 以上，为了解决上述问题，我们可以通过ContinuWith来在指定任务完成后去进行某些操作。
 
+```c#
+private static int Sum(int n)
+{
+    int sum=0;
+    for(;n>0;n--)
+        checked{
+            sum+=n;
+        }
+    return sum;
+}
+
+new Task<int>(n=>Sum((int)n),10000).Start().ContinueWith(task=>Console.WriteLine("The Sum is:"+task.Result));
+```
+
+
+
 #### Task开启子任务
+
+任务支持父子关系，如下：
+
+```c#
+Task<int[]> parent =new Task<int[]>(()=>{
+    var result=new int[];
+    new Task(()=>result[0]=Sum(10000),TaskCreationOption.AttachedToParent).Start();
+    new Task(()=>result[0]=Sum(20000),TaskCreationOption.AttachedToParent).Start();
+    new Task(()=>result[0]=Sum(30000),TaskCreationOption.AttachedToParent).Start();
+    return result;
+});
+
+var cwt=parent.ContinueWith(parent=>Array.ForEach(parent.Result,Console.WriteLine));
+parent.Start();
+```
+
+虽然里面的三个任务是parent内部创建的，但是都会被认为是顶级任务，与谁创建的无关。而当被创建任务被赋值TaskCreationOption.AttachedToParent将此任务与创建它们的任务关联，这个时候，只有所有子任务结束的时候，父任务才被认为是已经结束。
 
 #### Task异常处理
 
-
+假如Task调用一个或多个方法，或者
 
 ### Parallel
 
-### TaskScheduler&TaskFactory
+### TaskScheduler&TaskFactory&Task的简单剖析
 
 ### 线程调度过程
 
