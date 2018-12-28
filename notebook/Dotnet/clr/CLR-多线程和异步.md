@@ -282,6 +282,13 @@ Canceled 1
 
 ### Task
 
+<<<<<<< HEAD
+=======
+#### 介绍
+
+使用ThreadPool.QueueUserWorkItem执行异步操作，非常简单。大事，它没有内建机制让你知道它什么时候完成，也无法传递结果值。所以，CLR提供了System.Tasks命名空间下的Task类型来构建任务的概念。
+
+>>>>>>> master
 #### 使用Task开启一个异步任务
 
 我们可以new一个对象去调用start方法开启一个任务，也可以直接调用静态方法Run去开启，如下：
