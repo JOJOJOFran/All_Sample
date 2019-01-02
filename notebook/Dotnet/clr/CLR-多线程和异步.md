@@ -282,13 +282,10 @@ Canceled 1
 
 ### Task
 
-<<<<<<< HEAD
-=======
 #### 介绍
 
 使用ThreadPool.QueueUserWorkItem执行异步操作，非常简单。大事，它没有内建机制让你知道它什么时候完成，也无法传递结果值。所以，CLR提供了System.Tasks命名空间下的Task类型来构建任务的概念。
 
->>>>>>> master
 #### 使用Task开启一个异步任务
 
 我们可以new一个对象去调用start方法开启一个任务，也可以直接调用静态方法Run去开启，如下：
@@ -417,8 +414,6 @@ catch(AggregateException x)
     } 
 ```
 
-
-
 在Task的构造函数中传递CancellationTokenSource，从而使两者关联。无论是new一个，还是使用Run都是将其绑定起来。虽然，Task关联了CancellationTokenSource对象，但是却没有办法访问它，所以一般是将cts.Token作为闭包变量传递给lambda表达式，如上面两个示例一样。
 
 如果，任务还未开始就取消了，那么Task无法继续执行并且会抛出一个InvalidOperationException。
@@ -445,7 +440,7 @@ private static int Sum(int n)
 new Task<int>(n=>Sum((int)n),10000).Start().ContinueWith(task=>Console.WriteLine("The Sum is:"+task.Result));
 ```
 
-
+#### 
 
 #### Task开启子任务
 
@@ -468,9 +463,49 @@ parent.Start();
 
 #### Task异常处理
 
-假如Task调用一个或多个方法，或者
+假如Task调用一个或多个方法，或开启子任务如果这些方法抛出异常，它会被吞噬，你无法知道是哪一个方法报错了，直到Task调用Result属性或者Wait方法时，会抛出一个System.AggregateException对象。
+
+AggregateException内部会有一个集合装着子任务或多个方法抛出的未处理的异常。我们可以通过InnerExceptions属性来访问这些异常，注意是InnerExceptions不是InnerException，它是一个ReadOnlyCollection<Exception>对象。
+
+我们可以通过AggregateException的GetBaseException方法找到问题根源最内部的AggregateException（最内层的异常）。
+
+还提供了一个Flatten方法，它会在原基础上建立一个新的AggregateException，这个AggregateException的就是遍历外层直到最内层的AggregateException得到的，我们可以通过InnerExceptions去访问具体的异常。
+
+AggregateException还提供了一个Handle方法来处理异常，Handle会为每个内部的异常提供一个回调方法，通过这个回调方法来决定如何处理异常，如果回调方法返回true则表示处理了异常，反之则为未处理，如果未处理则抛出新的AggregateException异常。
+
+如果一直不调用调用Result属性或者Wait方法，代码就注意不到异常的发生。
 
 ### Parallel
+
+#### 静态For,ForEach和Invoke方法
+
+一些场景下使用任务可以提升性能，静态类Parallel内部封装了Task,通过这个类可以简化我们的代码。
+
+##### For方法
+
+```c#
+Paraller.For(0,1000,i=>DoWork(i));
+```
+
+##### ForEach方法
+
+```c#
+Parallel.ForEach(collection,item=>DoWork(item))
+```
+
+##### Invoke方法
+
+```c#
+Parallel.Invoke(
+	()=>Method1(),
+	()=>Method2(),
+	()=>Method3()
+);
+```
+
+我们说过，通过Parallel类的方法可以提高性能，但是并不是需要我们去替换所有的代码中的可以使用Parallel的地方。比如，如果要求工作项顺序执行或者修改共同的数据，这些Parallel都无法保证，如果盲目的使用可能会得到错误的结果。我们可以用线程同步锁来解决这个问题，但是线程同步以后，就只有一个线程来操作，无法获得Paraller带来的好处。
+
+另外，Parallel本身也有开销，委托对象必须分配内存，如果只是少量的简单的任务，使用这个得不偿失。但如果是大量的任务，或者每一项任务工作量巨大，则使用这些方法可以获得性能的提升。
 
 ### TaskScheduler&TaskFactory&Task的简单剖析
 

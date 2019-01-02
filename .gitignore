@@ -130,3 +130,9 @@ Dotnet/asp\.net core sample/简单实现系统数据类型/BaseDataStruct/obj/
 Dotnet/\.vscode/
 
 Dotnet/asp\.net core sample/Redis/ApiWithRedisDockerTest/obj/
+
+Dotnet/asp\.net core sample/生命周期/\.vs/
+
+Dotnet/asp\.net core sample/生命周期/LifeTimeDemo/bin/
+
+Dotnet/asp\.net core sample/生命周期/LifeTimeDemo/obj/
