@@ -37,9 +37,9 @@ namespace DatasturctAndAlgo.Tree.BinaryTree
                     node = node.LeftNode;
 
                 }
-                else if (data == node.Value && node.IsDeleted)
+                else if (data == node.Value )
                 {
-                    node.IsDeleted = false;
+                   // node.IsDeleted = false;
                 }
                 else if (data > node.Value)
                 {

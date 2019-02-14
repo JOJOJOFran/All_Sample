@@ -37,7 +37,7 @@ using System.Text;
             Count++;
             while(i/2>0&&array[i]>array[i/2])
             {
-                array.Swap(i.i/2);
+                array.Swap(i,i/2);
                 i=i/2;          
             }
         }      

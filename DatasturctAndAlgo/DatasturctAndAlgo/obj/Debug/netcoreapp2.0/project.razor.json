@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "/Users/fran/Documents/Code/github/All_Sample/DatasturctAndAlgo/DatasturctAndAlgo/DatasturctAndAlgo.csproj",
+  "TargetFramework": "netcoreapp2.0",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

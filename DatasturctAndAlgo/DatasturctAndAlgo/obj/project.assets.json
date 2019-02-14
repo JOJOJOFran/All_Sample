@@ -196,25 +196,17 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
-      },
-      "Tree/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Tree.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Tree.dll": {}
-        }
       }
     }
   },
   "libraries": {
     "Microsoft.NETCore.App/2.0.0": {
-      "sha512": "/mzXF+UtZef+VpzzN88EpvFq5U6z4rj54ZMq/J968H6pcvyLOmcupmTRpJ3CJm8ILoCGh9WI7qpDdiKtuzswrQ==",
+      "sha512": "aEj44yEbsK+XlDwPNSM7CeaYDg33NMk492y2kFRIOMPOVmXvXNO0LTDm8lUhS4Jlm2uNFsIDDH4ggt9lnSDejQ==",
       "type": "package",
       "path": "microsoft.netcore.app/2.0.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "Microsoft.NETCore.App.versions.txt",
         "THIRD-PARTY-NOTICES.TXT",
@@ -489,10 +481,12 @@
       ]
     },
     "Microsoft.NETCore.DotNetAppHost/2.0.0": {
-      "sha512": "L4GGkcI/Mxl8PKLRpFdGmLb5oI8sGIR05bDTGkzCoamAjdUl1Zhkov2swjEsZvKYT8kkdiz39LtwyGYuCJxm1A==",
+      "sha512": "dYQNVWNBsO9LldqAyJTt/wYUq2BScXq3ENBaNUjELS3sT53mwrgyPpmoLHsE7H10RzYOHEl5G0sg/jpZGlIAzA==",
       "type": "package",
       "path": "microsoft.netcore.dotnetapphost/2.0.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "microsoft.netcore.dotnetapphost.2.0.0.nupkg.sha512",
@@ -501,10 +495,12 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostPolicy/2.0.0": {
-      "sha512": "rm7mMn0A93fwyAwVhbyOCcPuu2hZNL0A0dAur9sNG9pEkONPfCEQeF7m2mC8KpqZO0Ol6tpV5J0AF3HTXT3GXA==",
+      "sha512": "RAMrQqBFMiF4dbpHJEvcwwXG+ISoKRck8zXlfr49waPc7xllEpv/ANHi4c3pCTkVIdNNSdDYf71YjbkaRSHJgg==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostpolicy/2.0.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "microsoft.netcore.dotnethostpolicy.2.0.0.nupkg.sha512",
@@ -513,10 +509,12 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostResolver/2.0.0": {
-      "sha512": "uBbjpeSrwsaTCADZCzRk+3aBzNnMqkC4zftJWBsL+Zk+8u+W+/lMb2thM5Y4hiVrv1YQg9t6dKldXzOKkY+pQw==",
+      "sha512": "LrZ1AcFJF7+da03Is+5RKdqjnDVNnoi1MBRAi4LRif3uO9rRntfNUezeNcG/OO/yGYzyEwGJkioyw8ZWGJiKWg==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostresolver/2.0.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "microsoft.netcore.dotnethostresolver.2.0.0.nupkg.sha512",
@@ -525,10 +523,12 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "sha512": "5BdAWDgMNwf90L0J+C/eh6kfHDa37ViL1cBL1nv5zPA4TB2cGV51YiQyvzCEy9DBE0LwwMI4+PkUpIekKyocSA==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
@@ -540,10 +540,12 @@
       ]
     },
     "NETStandard.Library/2.0.0": {
-      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
+      "sha512": "49ZAcrnNn56GIJwGoiaI7NpwcEJ8mjUyfSqVYIJMDhOBzPe8HSHS74swF2H0v8fzj7pxLfcYjS9P5PdIqsTQxw==",
       "type": "package",
       "path": "netstandard.library/2.0.0",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/NETStandard.Library.targets",
@@ -666,53 +668,41 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "Tree/1.0.0": {
-      "type": "project",
-      "path": "../Tree/Tree.csproj",
-      "msbuildProject": "../Tree/Tree.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Microsoft.NETCore.App >= 2.0.0",
-      "Tree >= 1.0.0"
+      "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
   "packageFolders": {
-    "G:\\Users\\Fran\\.nuget\\packages\\": {},
-    "G:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/fran/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AllOrNothing\\All_Sample\\datasturct&algo\\DatasturctAndAlgo\\DatasturctAndAlgo.csproj",
+      "projectUniqueName": "/Users/fran/Documents/Code/github/All_Sample/DatasturctAndAlgo/DatasturctAndAlgo/DatasturctAndAlgo.csproj",
       "projectName": "DatasturctAndAlgo",
-      "projectPath": "D:\\AllOrNothing\\All_Sample\\datasturct&algo\\DatasturctAndAlgo\\DatasturctAndAlgo.csproj",
-      "packagesPath": "G:\\Users\\Fran\\.nuget\\packages\\",
-      "outputPath": "D:\\AllOrNothing\\All_Sample\\datasturct&algo\\DatasturctAndAlgo\\obj\\",
+      "projectPath": "/Users/fran/Documents/Code/github/All_Sample/DatasturctAndAlgo/DatasturctAndAlgo/DatasturctAndAlgo.csproj",
+      "packagesPath": "/Users/fran/.nuget/packages/",
+      "outputPath": "/Users/fran/Documents/Code/github/All_Sample/DatasturctAndAlgo/DatasturctAndAlgo/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "G:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "G:\\Users\\Fran\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "G:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/fran/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "G:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://nuget.cnblogs.com/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {
-            "D:\\AllOrNothing\\All_Sample\\datasturct&algo\\Tree\\Tree.csproj": {
-              "projectPath": "D:\\AllOrNothing\\All_Sample\\datasturct&algo\\Tree\\Tree.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -725,6 +715,7 @@
       "netcoreapp2.0": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
