@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="D:\AllOrNothing\All_Sample\Dotnet\asp.net core sample\Configuration" t="IncludeFlat">
+      <e p="ConfigurationBuilder" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ConfigurationBuilder_Sample.csproj" t="IncludeRecursive" />
+        <e p="HeaderTitle.cs" t="Include" />
+        <e p="json1.json" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="ConfigurationBuilder_Sample.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+      </e>
+      <e p="ConfigurationBuilder.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="G:\Users\Fran\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_ConfigurationBuilder.-1510869718.00" t="ExcludeRecursive" />
+  </component>
+</project>

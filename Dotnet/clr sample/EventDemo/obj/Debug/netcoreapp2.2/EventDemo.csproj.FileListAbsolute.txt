@@ -1,0 +1,11 @@
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\bin\Debug\netcoreapp2.2\EventDemo.deps.json
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\bin\Debug\netcoreapp2.2\EventDemo.runtimeconfig.json
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\bin\Debug\netcoreapp2.2\EventDemo.runtimeconfig.dev.json
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\bin\Debug\netcoreapp2.2\EventDemo.dll
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\bin\Debug\netcoreapp2.2\EventDemo.pdb
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\obj\Debug\netcoreapp2.2\EventDemo.csprojAssemblyReference.cache
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\obj\Debug\netcoreapp2.2\EventDemo.csproj.CoreCompileInputs.cache
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\obj\Debug\netcoreapp2.2\EventDemo.AssemblyInfoInputs.cache
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\obj\Debug\netcoreapp2.2\EventDemo.AssemblyInfo.cs
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\obj\Debug\netcoreapp2.2\EventDemo.dll
+D:\AllOrNothing\All_Sample\Dotnet\clr sample\EventDemo\obj\Debug\netcoreapp2.2\EventDemo.pdb

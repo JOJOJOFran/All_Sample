@@ -14,7 +14,8 @@ namespace ConfigurationBuilder_Sample
 
             var config = builder.Build();
             var list= config.GetSection("report") .GetSection("user").GetChildren();
-
+            var list0 = config["report:user:title"];
+            var list1 = config["connectstring:sqlserver"];
             List<HeaderTitle> titles = new List<HeaderTitle>();
             foreach (var item in list)
             {

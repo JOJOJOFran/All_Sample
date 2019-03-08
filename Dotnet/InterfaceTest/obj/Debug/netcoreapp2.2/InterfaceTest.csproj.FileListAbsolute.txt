@@ -1,0 +1,11 @@
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\bin\Debug\netcoreapp2.2\InterfaceTest.deps.json
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\bin\Debug\netcoreapp2.2\InterfaceTest.runtimeconfig.json
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\bin\Debug\netcoreapp2.2\InterfaceTest.runtimeconfig.dev.json
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\bin\Debug\netcoreapp2.2\InterfaceTest.dll
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\bin\Debug\netcoreapp2.2\InterfaceTest.pdb
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\obj\Debug\netcoreapp2.2\InterfaceTest.csprojAssemblyReference.cache
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\obj\Debug\netcoreapp2.2\InterfaceTest.csproj.CoreCompileInputs.cache
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\obj\Debug\netcoreapp2.2\InterfaceTest.AssemblyInfoInputs.cache
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\obj\Debug\netcoreapp2.2\InterfaceTest.AssemblyInfo.cs
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\obj\Debug\netcoreapp2.2\InterfaceTest.dll
+D:\AllOrNothing\All_Sample\Dotnet\InterfaceTest\obj\Debug\netcoreapp2.2\InterfaceTest.pdb

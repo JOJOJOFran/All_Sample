@@ -440,8 +440,6 @@ private static int Sum(int n)
 new Task<int>(n=>Sum((int)n),10000).Start().ContinueWith(task=>Console.WriteLine("The Sum is:"+task.Result));
 ```
 
-#### 
-
 #### Task开启子任务
 
 任务支持父子关系，如下：
@@ -508,6 +506,90 @@ Parallel.Invoke(
 另外，Parallel本身也有开销，委托对象必须分配内存，如果只是少量的简单的任务，使用这个得不偿失。但如果是大量的任务，或者每一项任务工作量巨大，则使用这些方法可以获得性能的提升。
 
 ### TaskScheduler&TaskFactory&Task的简单剖析
+
+#### Task的内部构造
+
+首先我们来记住一个结论，Task的执行都是要依托于TaskScheduler。
+
+
+
+#### TaskScheduler任务调度器
+
+Task运行十分灵活，而它的灵活则依托于TaskScheduler，FCL默认提供了两个TaskScheduler派生类,一个是线程池任务调度器，一个是同步上下文任务调度器。
+
+默认情况下，所有应用程序都使用线程池任务调度器，而同步上下文任务调度器适用于图形界面。
+
+同时，Microsofft的ParallelExtensionExtra包中提供了其他的和任务有关的示例代码。
+
+我们可以看看TaskScheduler的结构
+
+```c#
+[DebuggerDisplay("Id={Id}")]
+    [DebuggerTypeProxy(typeof(SystemThreadingTasks_TaskSchedulerDebugView))]
+    public abstract class TaskScheduler
+    {
+        protected TaskScheduler();
+
+        ~TaskScheduler();
+        //默认的 System.Threading.Tasks.TaskScheduler 实例
+        public static TaskScheduler Default { get; }
+        //当前正在执行的任务关联的 System.Threading.Tasks.TaskScheduler
+        public static TaskScheduler Current { get; }
+        //最大并发级别的一个整数
+        public virtual int MaximumConcurrencyLevel { get; }
+        //System.Threading.Tasks.TaskScheduler 的唯一 ID
+        public int Id { get; }
+	   //当出错的Task 的未观察到的异常将要触发异常升级策略时发生，默认情况下，这将终止进程
+        private static EventHandler<UnobservedTaskExceptionEventArgs> _unobservedTaskException;
+        public static event EventHandler<UnobservedTaskExceptionEventArgs> UnobservedTaskException
+        {
+            [System.Security.SecurityCritical]
+            add
+            {
+                if (value != null)
+                {
+#if !PFX_LEGACY_3_5
+                    RuntimeHelpers.PrepareContractedDelegate(value);
+#endif
+                    lock (_unobservedTaskExceptionLockObject) _unobservedTaskException += value;
+                }
+            }
+ 
+            [System.Security.SecurityCritical]
+            remove
+            {
+                lock (_unobservedTaskExceptionLockObject) _unobservedTaskException -= value;
+            }
+        }
+
+        //创建一个与当前同步上下文关联的TaskScheduler
+        public static TaskScheduler FromCurrentSynchronizationContext();
+        //生成当前排队到计划程序中等待执行的 System.Threading.Tasks.Task 实例的枚举
+        [SecurityCritical]
+        protected abstract IEnumerable<Task> GetScheduledTasks();
+        [SecurityCritical]
+        //执行Task
+        [SecurityCritical]
+        protected bool TryExecuteTask(Task task)
+        {
+            if (task.ExecutingTaskScheduler != this)
+            {
+                throw new InvalidOperationException(
+                    Environment.GetResourceString("TaskScheduler_ExecuteTask_WrongTaskScheduler"));
+            }
+            return task.ExecuteEntry(true);
+        }
+
+        [SecurityCritical]
+        protected abstract bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued);
+        [SecurityCritical]
+        protected internal abstract void QueueTask(Task task);
+        [SecurityCritical]
+        protected internal virtual bool TryDequeue(Task task);
+    }
+```
+
+
 
 ### 线程调度过程
 

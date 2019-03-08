@@ -1,0 +1,47 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "D:\\AllOrNothing\\All_Sample\\Dotnet\\asp.net core sample\\Configuration\\ConfigurationBuilder\\ConfigurationBuilder_Sample.csproj",
+    "projectName": "ConfigurationBuilder_Sample",
+    "projectPath": "D:\\AllOrNothing\\All_Sample\\Dotnet\\asp.net core sample\\Configuration\\ConfigurationBuilder\\ConfigurationBuilder_Sample.csproj",
+    "outputPath": "D:\\AllOrNothing\\All_Sample\\Dotnet\\asp.net core sample\\Configuration\\ConfigurationBuilder\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "G:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "Microsoft.Extensions.Configuration.Json": {
+          "target": "Package",
+          "version": "[2.1.1, )"
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.0.0, )",
+          "autoReferenced": true
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

@@ -26,10 +26,12 @@ namespace IdentityServerCenter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentityServer()
-                .AddDeveloperSigningCredential()
+                .AddDeveloperSigningCredential()             
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddInMemoryClients(Config.GetClients())
-                .AddTestUsers((List<TestUser>)Config.GetTestUsers());
+                .AddTestUsers((List<TestUser>)Config.GetTestUsers())
+                .AddResourceOwnerValidator<RescourceOwnerPasswordValidator>()
+                .AddProfileService<ProfileService>();
                 
             services.AddMvc();
         }
