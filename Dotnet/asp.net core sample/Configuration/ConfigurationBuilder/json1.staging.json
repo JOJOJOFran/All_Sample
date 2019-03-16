@@ -1,0 +1,25 @@
+﻿{
+    "report": {
+        "user": [
+            {
+                "title": "价格",
+                "width": "30"
+            },
+            {
+                "title": "价格",
+                "width": "30"
+            },
+            {
+                "title": "价格",
+                "width": "30"
+            },
+            {
+                "title": "价格",
+                "width": "30"
+            }
+
+        ]
+
+    },
+    "connectstring": { "sqlserver": "dasdasddqw" }
+}

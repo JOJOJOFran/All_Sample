@@ -1,0 +1,11 @@
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/bin/Debug/netcoreapp2.2/fudamenttype.deps.json
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/bin/Debug/netcoreapp2.2/fudamenttype.runtimeconfig.json
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/bin/Debug/netcoreapp2.2/fudamenttype.runtimeconfig.dev.json
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/bin/Debug/netcoreapp2.2/fudamenttype.dll
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/bin/Debug/netcoreapp2.2/fudamenttype.pdb
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/obj/Debug/netcoreapp2.2/fudamenttype.csprojAssemblyReference.cache
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/obj/Debug/netcoreapp2.2/fudamenttype.csproj.CoreCompileInputs.cache
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/obj/Debug/netcoreapp2.2/fudamenttype.AssemblyInfoInputs.cache
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/obj/Debug/netcoreapp2.2/fudamenttype.AssemblyInfo.cs
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/obj/Debug/netcoreapp2.2/fudamenttype.dll
+/Users/fran/Documents/Code/github/All_Sample/Dotnet/clr sample/fudamenttype/fudamenttype/obj/Debug/netcoreapp2.2/fudamenttype.pdb

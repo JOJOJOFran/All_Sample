@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fudamenttype", "fudamenttype\fudamenttype.csproj", "{848A4CE2-0E7F-4ADD-B165-4F7F0A3285FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{848A4CE2-0E7F-4ADD-B165-4F7F0A3285FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{848A4CE2-0E7F-4ADD-B165-4F7F0A3285FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{848A4CE2-0E7F-4ADD-B165-4F7F0A3285FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{848A4CE2-0E7F-4ADD-B165-4F7F0A3285FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

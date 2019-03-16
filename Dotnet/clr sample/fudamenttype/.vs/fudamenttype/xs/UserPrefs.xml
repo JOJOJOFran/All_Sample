@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{848A4CE2-0E7F-4ADD-B165-4F7F0A3285FF}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="fudamenttype/Program.cs">
+    <Files>
+      <File FileName="fudamenttype/Program.cs" Line="53" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="fudamenttype" expanded="True">
+            <Node name="fudamenttype" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.fudamenttype PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

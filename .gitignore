@@ -160,3 +160,7 @@ Dotnet/clr sample/MemoryManagementAndGC/MemoryManageAndGarbageCollection/obj/
 Dotnet/clr sample/TaskSchedulerSample/obj/
 
 Dotnet/InterfaceTest/obj/
+
+Dotnet/asp\.net core sample/Configuration/ConfigurationBuilder/bin/
+
+Dotnet/asp\.net core sample/Configuration/ConfigurationBuilder/obj/

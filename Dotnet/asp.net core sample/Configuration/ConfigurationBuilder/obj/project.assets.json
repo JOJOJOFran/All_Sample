@@ -329,7 +329,11 @@
   },
   "libraries": {
     "Microsoft.Extensions.Configuration/2.1.1": {
+<<<<<<< HEAD
       "sha512": "LjVKO6P2y52c5ZhTLX/w8zc5H4Y3J/LJsgqTBj49TtFq/hAtVNue/WA0F6/7GMY90xhD7K0MDZ4qpOeWXbLvzg==",
+=======
+      "sha512": "7eM+3i9Th1eorWxgfjdAgNUQAQ5eHHFswRmAsy/acsX5tumlBc206ggiVslWYoVGBJcqM+W4Ll5j8wtn/T8ExQ==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.extensions.configuration/2.1.1",
       "files": [
@@ -342,7 +346,11 @@
       ]
     },
     "Microsoft.Extensions.Configuration.Abstractions/2.1.1": {
+<<<<<<< HEAD
       "sha512": "VfuZJNa0WUshZ/+8BFZAhwFKiKuu/qOUCFntfdLpHj7vcRnsGHqd3G2Hse78DM+pgozczGM63lGPRLmy+uhUOA==",
+=======
+      "sha512": "7mrMA/bwMPDx339RWoOqQ/GLUDVdeVEyRWag6yLOwGrsZ6EpHSaLig+dIgH1tFWzOrqtUWOT5t0R6ZOd2AH/gg==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.extensions.configuration.abstractions/2.1.1",
       "files": [
@@ -355,7 +363,11 @@
       ]
     },
     "Microsoft.Extensions.Configuration.FileExtensions/2.1.1": {
+<<<<<<< HEAD
       "sha512": "CDk5CwG0YzlRgvl65J0iK6ahrX12yMRrEat3yVTXjWC+GN9Jg9zHZu2IE4cQIPAMA/IiAI5KjgL08fhP3fPCkw==",
+=======
+      "sha512": "X/DlrHGDim2H57HMyaLU+Ky9jEipwCKQyIQQ48/4wKVkYoxedBwfxT2831gU1Y6SuaPiMk+wC3zG+YK/2fNh7A==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.extensions.configuration.fileextensions/2.1.1",
       "files": [
@@ -368,7 +380,11 @@
       ]
     },
     "Microsoft.Extensions.Configuration.Json/2.1.1": {
+<<<<<<< HEAD
       "sha512": "IFpONpvdhVEE3S3F4fTYkpT/GyIHtumy2m0HniQanJ80Pj/pUF3Z4wjrHEp1G78rPD+WTo5fRlhdJfuU1Tv2GQ==",
+=======
+      "sha512": "5b8sb2G+AAnKOcNTMEDK6svTCXEB7QNdxB0/ZqQ3PgwYDqNlr4AlxOF0yFjiQp6u//x0FRFzk6OJIfNOGtJ69w==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.extensions.configuration.json/2.1.1",
       "files": [
@@ -381,7 +397,11 @@
       ]
     },
     "Microsoft.Extensions.FileProviders.Abstractions/2.1.1": {
+<<<<<<< HEAD
       "sha512": "UEQB5/QPuLYaCvScZQ9llhcks5xyEUKh41D615FoehRAF9UgGVmXHcCSOH8idHHLRoKm+OJJjEy1oywvuaL33w==",
+=======
+      "sha512": "zlIQ7q220l+ckdL03xNwEhG3DFle9sBuFoYheQsyq17DnxS3JDsmMhNert8+Z8lSMTYQ8ajyyD2hxt16EaoObA==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.extensions.fileproviders.abstractions/2.1.1",
       "files": [
@@ -394,7 +414,11 @@
       ]
     },
     "Microsoft.Extensions.FileProviders.Physical/2.1.1": {
+<<<<<<< HEAD
       "sha512": "kVCvLm1ePchUgRrQZrno07Mn6knDAzR7vl6eRaI/fem0u6ODg+RTwOYLs4XL39Ttuu+BzEwqzHu3DtDgXT8+vQ==",
+=======
+      "sha512": "yZABjUiyVeliKWOaWpMJ4yPVvkiZMjvA7xVUckOh4pd08n9+QxphfEII8MfOYadMDqaOaPV9rv5EPx9yqNJjfg==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.extensions.fileproviders.physical/2.1.1",
       "files": [
@@ -407,7 +431,11 @@
       ]
     },
     "Microsoft.Extensions.FileSystemGlobbing/2.1.1": {
+<<<<<<< HEAD
       "sha512": "4QDzyCN8cJnThY6mK9SnzovyCZ8KCG9jmC9KqHfFGtazJvmNZP1gcyBkPmqMjP0qwbmEUUyqyA9LLn3FrYXTGw==",
+=======
+      "sha512": "fuYKDC8e39qIP4Q38jaw3yrjEw9E6ljWhwKAeD4Tfipup5MoqzZXKGXMdmWno9eBhbzxSnkiQgheyZ7cj94ODw==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.extensions.filesystemglobbing/2.1.1",
       "files": [
@@ -420,7 +448,11 @@
       ]
     },
     "Microsoft.Extensions.Primitives/2.1.1": {
+<<<<<<< HEAD
       "sha512": "scJ1GZNIxMmjpENh0UZ8XCQ6vzr/LzeF9WvEA51Ix2OQGAs9WPgPu8ABVUdvpKPLuor/t05gm6menJK3PwqOXg==",
+=======
+      "sha512": "TCTmtM3t1eeSi+vZXILqT9vNBooOeuB9VChERfeP+XPi7BCJV68eD1EJDC/LpXkAb+3ZK2Fd8no7U3kHl6ozkQ==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.extensions.primitives/2.1.1",
       "files": [
@@ -433,7 +465,11 @@
       ]
     },
     "Microsoft.NETCore.App/2.0.0": {
+<<<<<<< HEAD
       "sha512": "8Lrz5RgmfIUMtpTmGG1Z+nVlCr14bFco/aQdiNYfb7uys37vQ6dVtds9xPIFANVyf6HFePhD9nGmqFcfv5eKMQ==",
+=======
+      "sha512": "aEj44yEbsK+XlDwPNSM7CeaYDg33NMk492y2kFRIOMPOVmXvXNO0LTDm8lUhS4Jlm2uNFsIDDH4ggt9lnSDejQ==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.netcore.app/2.0.0",
       "files": [
@@ -727,7 +763,11 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostPolicy/2.0.0": {
+<<<<<<< HEAD
       "sha512": "uYoVFwvMIp9KtOjW6huBedoBP+50Pny0aIrmJGPoaHJ9anAtrvCjS+iKFR5MIS8amJRKsLc3YEtpT/AYfYmIdA==",
+=======
+      "sha512": "RAMrQqBFMiF4dbpHJEvcwwXG+ISoKRck8zXlfr49waPc7xllEpv/ANHi4c3pCTkVIdNNSdDYf71YjbkaRSHJgg==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.netcore.dotnethostpolicy/2.0.0",
       "files": [
@@ -741,7 +781,11 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostResolver/2.0.0": {
+<<<<<<< HEAD
       "sha512": "HYXxywd3EaAw1M2K5ox6oUu0NgG90oDIpyq70IBvOf2keNuMJWYTWZUAoTlpv8E0Ks09DA+gczoA64tCdII5Xw==",
+=======
+      "sha512": "LrZ1AcFJF7+da03Is+5RKdqjnDVNnoi1MBRAi4LRif3uO9rRntfNUezeNcG/OO/yGYzyEwGJkioyw8ZWGJiKWg==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.netcore.dotnethostresolver/2.0.0",
       "files": [
@@ -755,7 +799,11 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
+<<<<<<< HEAD
       "sha512": "CCf4NjmDOoise7FAij2VPuHIgKKsu696vkTwhOkPVQfLsTmB2WLFfQ4yeO5Udtk8FD636UBMx6Y9eovzJKT76A==",
+=======
+      "sha512": "5BdAWDgMNwf90L0J+C/eh6kfHDa37ViL1cBL1nv5zPA4TB2cGV51YiQyvzCEy9DBE0LwwMI4+PkUpIekKyocSA==",
+>>>>>>> master
       "type": "package",
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
@@ -772,7 +820,11 @@
       ]
     },
     "NETStandard.Library/2.0.0": {
+<<<<<<< HEAD
       "sha512": "sn4JwjEN5iNfqc0bd0Qje5oBZBB9wyuNn4GkQvEzfKVnZ3QH0HHoN9exxydlJGptiCMVdAZu7At9TNj0r8Z0yg==",
+=======
+      "sha512": "49ZAcrnNn56GIJwGoiaI7NpwcEJ8mjUyfSqVYIJMDhOBzPe8HSHS74swF2H0v8fzj7pxLfcYjS9P5PdIqsTQxw==",
+>>>>>>> master
       "type": "package",
       "path": "netstandard.library/2.0.0",
       "files": [
@@ -902,10 +954,12 @@
       ]
     },
     "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "sha512": "znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
       "type": "package",
       "path": "newtonsoft.json/11.0.2",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -987,31 +1041,37 @@
     ]
   },
   "packageFolders": {
-    "G:\\Users\\Fran\\.nuget\\packages\\": {},
-    "G:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/fran/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\AllOrNothing\\All_Sample\\Dotnet\\asp.net core sample\\Configuration\\ConfigurationBuilder\\ConfigurationBuilder_Sample.csproj",
       "projectName": "ConfigurationBuilder_Sample",
       "projectPath": "D:\\AllOrNothing\\All_Sample\\Dotnet\\asp.net core sample\\Configuration\\ConfigurationBuilder\\ConfigurationBuilder_Sample.csproj",
       "packagesPath": "G:\\Users\\Fran\\.nuget\\packages\\",
       "outputPath": "D:\\AllOrNothing\\All_Sample\\Dotnet\\asp.net core sample\\Configuration\\ConfigurationBuilder\\obj\\",
+=======
+      "projectUniqueName": "/Users/fran/Documents/Code/github/All_Sample/Dotnet/asp.net core sample/Configuration/ConfigurationBuilder/ConfigurationBuilder_Sample.csproj",
+      "projectName": "ConfigurationBuilder_Sample",
+      "projectPath": "/Users/fran/Documents/Code/github/All_Sample/Dotnet/asp.net core sample/Configuration/ConfigurationBuilder/ConfigurationBuilder_Sample.csproj",
+      "packagesPath": "/Users/fran/.nuget/packages/",
+      "outputPath": "/Users/fran/Documents/Code/github/All_Sample/Dotnet/asp.net core sample/Configuration/ConfigurationBuilder/obj/",
+>>>>>>> master
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "G:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "G:\\Users\\Fran\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "G:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/fran/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "G:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://nuget.cnblogs.com/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
