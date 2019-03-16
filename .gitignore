@@ -142,3 +142,21 @@ Dotnet/asp\.net core sample/IDS4_Demo/ResourceApiByIDS4/obj/
 \.DS_Store
 
 Dotnet/asp\.net core sample/IDS4_Demo/ResourceApiByIDS4/
+
+Dotnet/clr sample/BasicType/\.vs/
+
+Dotnet/clr sample/BasicType/BaseTypeDemo/bin/
+
+Dotnet/clr sample/BasicType/BaseTypeDemo/obj/
+
+Dotnet/clr sample/EventDemo/bin/
+
+Dotnet/clr sample/EventDemo/obj/
+
+Dotnet/clr sample/Expression/obj/
+
+Dotnet/clr sample/MemoryManagementAndGC/MemoryManageAndGarbageCollection/obj/
+
+Dotnet/clr sample/TaskSchedulerSample/obj/
+
+Dotnet/InterfaceTest/obj/
