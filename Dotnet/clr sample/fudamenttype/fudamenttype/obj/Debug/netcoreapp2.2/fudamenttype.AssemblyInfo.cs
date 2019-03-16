@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ConfigurationBuilder_Sample")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("fudamenttype")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("ConfigurationBuilder_Sample")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ConfigurationBuilder_Sample")]
+[assembly: System.Reflection.AssemblyProductAttribute("fudamenttype")]
+[assembly: System.Reflection.AssemblyTitleAttribute("fudamenttype")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // 由 MSBuild WriteCodeFragment 类生成。

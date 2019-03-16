@@ -6,3 +6,7 @@ var app=new Vue({
     el:'#moudle'
 })
 
+var app1=new Vue({
+    
+})
+

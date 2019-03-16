@@ -7,10 +7,14 @@
 
   <ItemGroup>
     <None Remove="json1.json" />
+    <None Remove="json1.staging.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="json1.json">
+    <Content Include="json1.production.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="json1.staging.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -19,4 +23,9 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="json1.staging.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
